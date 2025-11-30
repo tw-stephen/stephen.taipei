@@ -1,27 +1,31 @@
 <nav
-  class="fixed top-0 left-0 right-0 z-50 transition-all duration-300"
+  class="fixed top-0 left-0 right-0 z-50 transition-all duration-300 safe-area-padding"
   [class.bg-deep-space]="isScrolled()"
-  [class.bg-opacity-90]="isScrolled()"
-  [class.backdrop-blur-lg]="isScrolled()"
+  [class.bg-opacity-95]="isScrolled()"
+  [class.backdrop-blur-xl]="isScrolled()"
   [class.shadow-lg]="isScrolled()"
   [class.shadow-neon-cyan/10]="isScrolled()"
 >
   <div class="container mx-auto px-4 sm:px-6 lg:px-8">
-    <div class="flex items-center justify-between h-20">
+    <div class="flex items-center justify-between h-16 sm:h-18 md:h-20">
       <!-- Logo -->
-      <a href="#" class="flex items-center space-x-2 group" (click)="scrollTo('#hero', $event)">
-        <span class="text-2xl font-bold font-display text-gradient">S.</span>
-        <span class="hidden sm:block text-lg font-medium text-gray-300 group-hover:text-neon-cyan transition-colors">
+      <a
+        href="#"
+        class="flex items-center space-x-2 group min-h-[44px]"
+        (click)="scrollTo('#hero', $event)"
+      >
+        <span class="text-xl sm:text-2xl font-bold font-display text-gradient">S.</span>
+        <span class="hidden sm:block text-base sm:text-lg font-medium text-gray-300 group-hover:text-neon-cyan transition-colors">
           Stephen
         </span>
       </a>
 
       <!-- Desktop Navigation -->
-      <div class="hidden md:flex items-center space-x-8">
+      <div class="hidden lg:flex items-center space-x-6 xl:space-x-8">
         @for (link of navLinks; track link.href) {
           <a
             [href]="link.href"
-            class="nav-link relative text-gray-300 hover:text-neon-cyan transition-colors duration-300 font-medium"
+            class="nav-link relative text-gray-300 hover:text-neon-cyan transition-colors duration-300 font-medium text-sm xl:text-base py-2"
             (click)="scrollTo(link.href, $event)"
           >
             {{ link.label }}
@@ -30,25 +34,25 @@
         }
       </div>
 
-      <!-- CTA Button -->
-      <div class="hidden md:block">
+      <!-- CTA Button - Desktop -->
+      <div class="hidden lg:block">
         <a
           href="#contact"
-          class="btn-primary text-sm"
+          class="btn-primary text-sm px-4 py-2"
           (click)="scrollTo('#contact', $event)"
         >
           聯絡我
         </a>
       </div>
 
-      <!-- Mobile Menu Button -->
+      <!-- Mobile Menu Button - 增大觸控區域 -->
       <button
-        class="md:hidden p-2 text-gray-300 hover:text-neon-cyan transition-colors"
+        class="lg:hidden flex items-center justify-center w-11 h-11 rounded-lg text-gray-300 hover:text-neon-cyan hover:bg-neon-cyan/10 transition-all"
         (click)="toggleMobileMenu()"
         [attr.aria-expanded]="isMobileMenuOpen()"
-        aria-label="Toggle menu"
+        aria-label="開啟選單"
       >
-        <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+        <svg class="w-6 h-6 transition-transform duration-300" [class.rotate-90]="isMobileMenuOpen()" fill="none" stroke="currentColor" viewBox="0 0 24 24">
           @if (isMobileMenuOpen()) {
             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12" />
           } @else {
@@ -59,26 +63,34 @@
     </div>
   </div>
 
-  <!-- Mobile Menu -->
+  <!-- Mobile Menu - 改善動畫和佈局 -->
   @if (isMobileMenuOpen()) {
-    <div class="md:hidden glass-card border-t border-neon-cyan/20 animate-fade-in-up">
-      <div class="container mx-auto px-4 py-4 space-y-4">
-        @for (link of navLinks; track link.href) {
+    <div
+      class="lg:hidden glass-card border-t border-neon-cyan/20 overflow-hidden"
+      @slideDown
+    >
+      <div class="container mx-auto px-4 py-3 sm:py-4">
+        <div class="space-y-1">
+          @for (link of navLinks; track link.href; let i = $index) {
+            <a
+              [href]="link.href"
+              class="flex items-center py-3 px-3 rounded-lg text-gray-300 hover:text-neon-cyan hover:bg-neon-cyan/5 transition-all font-medium"
+              (click)="scrollTo(link.href, $event)"
+              [style.animation-delay]="(i * 50) + 'ms'"
+            >
+              {{ link.label }}
+            </a>
+          }
+        </div>
+        <div class="pt-3 mt-3 border-t border-gray-700/50">
           <a
-            [href]="link.href"
-            class="block py-2 text-gray-300 hover:text-neon-cyan transition-colors font-medium"
-            (click)="scrollTo(link.href, $event)"
+            href="#contact"
+            class="btn-primary w-full text-center text-sm"
+            (click)="scrollTo('#contact', $event)"
           >
-            {{ link.label }}
+            聯絡我
           </a>
-        }
-        <a
-          href="#contact"
-          class="block btn-primary text-center text-sm mt-4"
-          (click)="scrollTo('#contact', $event)"
-        >
-          聯絡我
-        </a>
+        </div>
       </div>
     </div>
   }

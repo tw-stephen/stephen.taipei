@@ -1,13 +1,75 @@
+/**
+ * Navbar 組件樣式
+ * - 響應式導航欄
+ * - 移動端選單
+ * - 滾動狀態
+ */
+
+// 導航連結下劃線效果
 .nav-link {
-  &:hover .nav-underline {
+  &:hover .nav-underline,
+  &:focus .nav-underline {
     width: 100%;
   }
 }
 
+// 移動端選單按鈕動畫
+button svg {
+  transition: transform 0.3s ease;
+}
+
+// 移動端選單項目入場動畫
+.glass-card a {
+  animation: menuItemIn 0.3s ease forwards;
+  opacity: 0;
+}
+
+@keyframes menuItemIn {
+  from {
+    opacity: 0;
+    transform: translateX(-10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+// 確保導航欄高度響應式
+nav {
+  // 添加頂部安全區域
+  padding-top: env(safe-area-inset-top);
+}
+
+// 改善移動端選單的觸控體驗
+.lg\:hidden.glass-card {
+  // 添加底部安全區域
+  padding-bottom: env(safe-area-inset-bottom);
+
+  a {
+    // 確保觸控目標足夠大
+    min-height: 44px;
+    display: flex;
+    align-items: center;
+  }
+}
+
+// 滾動時的導航欄樣式增強
+nav.bg-deep-space {
+  border-bottom: 1px solid rgba(0, 217, 255, 0.1);
+}
+
+// 導航連結響應式間距
+@media (min-width: 1024px) and (max-width: 1279px) {
+  .lg\:flex {
+    gap: 1.25rem;
+  }
+}
+
 // Mobile menu improvements
-@media (max-width: 767px) {
+@media (max-width: 1023px) {
   // Ensure mobile menu button is clearly visible and tappable
-  button[aria-label="Toggle menu"] {
+  button[aria-label="開啟選單"] {
     min-width: 44px;
     min-height: 44px;
     display: flex;

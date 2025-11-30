@@ -13,6 +13,14 @@
  * - Inter: 英文內文
  * - Noto Sans TC: 中文內文
  *
+ * RWD 斷點：
+ * - xs: 0-479px (小型手機)
+ * - sm: 480-639px (大型手機)
+ * - md: 640-767px (小型平板)
+ * - lg: 768-1023px (平板)
+ * - xl: 1024-1279px (小型桌面)
+ * - 2xl: 1280px+ (大型桌面)
+ *
  * 注意：Google Fonts 在 index.html 中使用 <link> 預載入，
  *       避免在 SCSS 中使用 @import url() 導致構建時內聯失敗
  */
@@ -124,10 +132,18 @@ div > svg:not(.full-size-svg) {
 
 html {
   scroll-behavior: smooth;
-  font-size: 15px; // Increased base font size for mobile readability
+  font-size: 14px; // Mobile base
+
+  @media (min-width: 480px) {
+    font-size: 15px;
+  }
 
   @media (min-width: 768px) {
     font-size: 16px;
+  }
+
+  @media (min-width: 1280px) {
+    font-size: 17px;
   }
 }
 
@@ -136,7 +152,11 @@ body {
   background-color: var(--deep-space);
   color: var(--light-gray);
   overflow-x: hidden;
-  line-height: 1.6;
+  line-height: 1.7;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  // 防止移動端點擊時的藍色高亮
+  -webkit-tap-highlight-color: transparent;
 }
 
 // Selection
@@ -244,38 +264,63 @@ h6 {
 }
 
 .section-title {
-  font-size: 2rem;
+  font-size: 1.75rem;
   font-weight: 700;
-  margin-bottom: 0.75rem;
+  margin-bottom: 0.5rem;
   font-family: "Orbitron", sans-serif;
   line-height: 1.2;
 
+  @media (min-width: 480px) {
+    font-size: 2rem;
+    margin-bottom: 0.75rem;
+  }
+
   @media (min-width: 768px) {
-    font-size: 3rem;
+    font-size: 2.5rem;
     margin-bottom: 1rem;
+  }
+
+  @media (min-width: 1024px) {
+    font-size: 3rem;
   }
 }
 
 .section-subtitle {
-  font-size: 1rem;
+  font-size: 0.875rem;
   color: #9ca3af;
-  margin-bottom: 2.5rem;
+  margin-bottom: 2rem;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+
+  @media (min-width: 480px) {
+    font-size: 1rem;
+    margin-bottom: 2.5rem;
+  }
 
   @media (min-width: 768px) {
-    font-size: 1.25rem;
+    font-size: 1.125rem;
     margin-bottom: 3rem;
   }
 }
 
 .btn-primary {
-  padding: 0.75rem 1.5rem;
-  border-radius: 0.5rem;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  padding: 0.875rem 1.5rem;
+  border-radius: 0.75rem;
   font-weight: 600;
-  transition: all 0.3s ease;
+  font-size: 0.9375rem;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
   background: linear-gradient(135deg, var(--neon-cyan), var(--deep-purple));
   color: white;
   position: relative;
   overflow: hidden;
+  min-height: 48px; // 觸控友善最小高度
+  text-decoration: none;
+  cursor: pointer;
+  border: none;
 
   &::after {
     content: "";
@@ -290,39 +335,59 @@ h6 {
   }
 
   &:active {
-    transform: scale(0.98);
+    transform: scale(0.97);
   }
 
   @media (hover: hover) {
     &:hover {
-      transform: translateY(-2px);
+      transform: translateY(-3px);
       box-shadow: 0 10px 30px rgba(0, 217, 255, 0.4);
       &::after {
         opacity: 1;
       }
     }
   }
+
+  @media (min-width: 768px) {
+    padding: 1rem 2rem;
+    font-size: 1rem;
+  }
 }
 
 .btn-outline {
-  padding: 0.75rem 1.5rem;
-  border-radius: 0.5rem;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  padding: 0.875rem 1.5rem;
+  border-radius: 0.75rem;
   font-weight: 600;
-  transition: all 0.3s ease;
+  font-size: 0.9375rem;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
   border: 2px solid var(--neon-cyan);
   color: var(--neon-cyan);
   background: transparent;
+  min-height: 48px; // 觸控友善最小高度
+  text-decoration: none;
+  cursor: pointer;
 
   &:active {
-    background: rgba(0, 217, 255, 0.1);
+    background: rgba(0, 217, 255, 0.15);
+    transform: scale(0.97);
   }
 
   @media (hover: hover) {
     &:hover {
       background: var(--neon-cyan);
       color: var(--deep-space);
-      box-shadow: 0 0 20px rgba(0, 217, 255, 0.5);
+      box-shadow: 0 0 25px rgba(0, 217, 255, 0.5);
+      transform: translateY(-3px);
     }
+  }
+
+  @media (min-width: 768px) {
+    padding: 1rem 2rem;
+    font-size: 1rem;
   }
 }
 
@@ -382,35 +447,69 @@ section#hero {
   min-height: 100vh;
   // Fix for mobile browser address bar
   min-height: 100dvh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
-// Consistent section spacing
+// Consistent section spacing - 更細緻的響應式間距
 section:not(#hero) {
-  padding-top: 3rem;
-  padding-bottom: 3rem;
+  padding-top: 2.5rem;
+  padding-bottom: 2.5rem;
+
+  @media (min-width: 480px) {
+    padding-top: 3rem;
+    padding-bottom: 3rem;
+  }
 
   @media (min-width: 768px) {
+    padding-top: 4rem;
+    padding-bottom: 4rem;
+  }
+
+  @media (min-width: 1024px) {
+    padding-top: 5rem;
+    padding-bottom: 5rem;
+  }
+
+  @media (min-width: 1280px) {
     padding-top: 6rem;
     padding-bottom: 6rem;
   }
 }
 
-// Container
+// Container - 更細緻的響應式容器
 .container {
+  width: 100%;
   max-width: 80rem;
   margin-left: auto;
   margin-right: auto;
   padding-left: 1rem;
   padding-right: 1rem;
 
+  @media (min-width: 480px) {
+    padding-left: 1.25rem;
+    padding-right: 1.25rem;
+  }
+
   @media (min-width: 640px) {
     padding-left: 1.5rem;
     padding-right: 1.5rem;
   }
 
-  @media (min-width: 1024px) {
+  @media (min-width: 768px) {
     padding-left: 2rem;
     padding-right: 2rem;
+  }
+
+  @media (min-width: 1024px) {
+    padding-left: 2.5rem;
+    padding-right: 2.5rem;
+  }
+
+  @media (min-width: 1280px) {
+    padding-left: 3rem;
+    padding-right: 3rem;
   }
 }
 
@@ -475,4 +574,130 @@ section:not(#hero) {
 }
 .delay-1000 {
   animation-delay: 1s;
+}
+
+// ============================================
+// 增強的 RWD 工具類
+// ============================================
+
+// 響應式文字大小
+.text-responsive-sm {
+  font-size: 0.8125rem;
+  @media (min-width: 768px) {
+    font-size: 0.875rem;
+  }
+}
+
+.text-responsive-base {
+  font-size: 0.9375rem;
+  @media (min-width: 768px) {
+    font-size: 1rem;
+  }
+}
+
+.text-responsive-lg {
+  font-size: 1rem;
+  @media (min-width: 768px) {
+    font-size: 1.125rem;
+  }
+}
+
+// 響應式間距
+.gap-responsive {
+  gap: 1rem;
+  @media (min-width: 768px) {
+    gap: 1.5rem;
+  }
+  @media (min-width: 1024px) {
+    gap: 2rem;
+  }
+}
+
+// 改善的 glass-card hover 效果 (觸控友善)
+.glass-card-interactive {
+  @extend .glass-card;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+
+  &:active {
+    transform: scale(0.98);
+    border-color: rgba(0, 217, 255, 0.3);
+  }
+
+  @media (hover: hover) {
+    &:hover {
+      transform: translateY(-4px);
+      border-color: rgba(0, 217, 255, 0.4);
+      box-shadow: 0 8px 30px rgba(0, 217, 255, 0.15);
+    }
+  }
+}
+
+// 浮動粒子動畫
+@keyframes float {
+  0%, 100% {
+    transform: translateY(0) rotate(0deg);
+    opacity: 0.3;
+  }
+  50% {
+    transform: translateY(-20px) rotate(180deg);
+    opacity: 0.6;
+  }
+}
+
+.animate-float {
+  animation: float 6s ease-in-out infinite;
+}
+
+// 漸入動畫
+@keyframes slideInLeft {
+  from {
+    opacity: 0;
+    transform: translateX(-30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+@keyframes slideInRight {
+  from {
+    opacity: 0;
+    transform: translateX(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+.animate-slide-in-left {
+  animation: slideInLeft 0.6s ease forwards;
+}
+
+.animate-slide-in-right {
+  animation: slideInRight 0.6s ease forwards;
+}
+
+// 增強的焦點狀態 (可訪問性)
+a:focus-visible,
+button:focus-visible {
+  outline: 2px solid var(--neon-cyan);
+  outline-offset: 2px;
+}
+
+// 隱藏滾動條但保持可滾動
+.scrollbar-hide {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+  &::-webkit-scrollbar {
+    display: none;
+  }
+}
+
+// 安全區域 padding (iPhone notch)
+.safe-area-padding {
+  padding-left: env(safe-area-inset-left);
+  padding-right: env(safe-area-inset-right);
+  padding-bottom: env(safe-area-inset-bottom);
 }
