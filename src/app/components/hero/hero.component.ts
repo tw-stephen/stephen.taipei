@@ -1,3 +1,17 @@
+/**
+ * Hero 首頁組件
+ *
+ * 功能：
+ * - Three.js 粒子動畫背景（支援滑鼠互動）
+ * - 打字機效果顯示職稱
+ * - GSAP 入場動畫
+ * - 平滑滾動到其他區塊
+ *
+ * 性能優化：
+ * - 移動端減少粒子數量 (800 vs 2000)
+ * - 限制 devicePixelRatio 最大為 2
+ * - 組件銷毀時正確清理資源
+ */
 import { CommonModule } from '@angular/common';
 import {
   AfterViewInit,

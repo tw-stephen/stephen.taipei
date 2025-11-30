@@ -1,3 +1,15 @@
+/**
+ * 工作經歷組件
+ *
+ * 功能：
+ * - 以時間軸形式展示工作經歷
+ * - 支援展開/收起詳細內容
+ * - 使用 GSAP 實現滾動動畫
+ *
+ * 資料結構：
+ * - experiences: 工作經歷陣列
+ * - expandedId: 當前展開的項目 ID
+ */
 import { Component, ElementRef, AfterViewInit, ViewChild, signal } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import gsap from 'gsap';
@@ -5,6 +17,7 @@ import { ScrollTrigger } from 'gsap/ScrollTrigger';
 
 gsap.registerPlugin(ScrollTrigger);
 
+/** 工作經歷資料介面 */
 interface Experience {
   id: number;
   company: string;
@@ -38,11 +51,11 @@ export class ExperienceComponent implements AfterViewInit {
       description: '負責前端架構設計與團隊技術領導，推動現代化開發流程',
       achievements: [
         '導入 Nx Monorepo 架構，整合多專案與模組共享',
-        '升級 Angular 19，全面採用 Signal/Zoneless 架構',
+        '升級 Angular 21，全面採用 Signal/Zoneless 架構',
         '性能優化：代碼精簡 (1000行→200行)，提升開發效率',
         '帶領 2-4 人前端團隊，建立技術分享文化'
       ],
-      technologies: ['Angular 19', 'Nx Monorepo', 'Signal', 'TailwindCSS', 'Laravel']
+      technologies: ['Angular 21', 'Nx Monorepo', 'Signal', 'TailwindCSS', 'Laravel']
     },
     {
       id: 2,

@@ -1,3 +1,12 @@
+/**
+ * 關於我組件
+ *
+ * 功能：
+ * - 個人簡介與背景介紹
+ * - 核心優勢卡片展示（跨領域開發、架構創新、性能優化、團隊領導）
+ * - 統計數據展示（年資、專案數、服務用戶）
+ * - GSAP ScrollTrigger 滾動動畫
+ */
 import { Component, ElementRef, AfterViewInit, ViewChild } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import gsap from 'gsap';
@@ -5,10 +14,11 @@ import { ScrollTrigger } from 'gsap/ScrollTrigger';
 
 gsap.registerPlugin(ScrollTrigger);
 
+/** 核心優勢資料介面 */
 interface Advantage {
-  icon: string;
-  title: string;
-  description: string;
+  icon: string;      // SVG path
+  title: string;     // 優勢標題
+  description: string; // 優勢描述
 }
 
 @Component({

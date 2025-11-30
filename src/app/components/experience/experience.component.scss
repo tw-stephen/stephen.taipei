@@ -1,4 +1,11 @@
+/**
+ * 工作經歷組件樣式
+ * - 時間軸交錯佈局
+ * - 響應式設計：移動端單列，桌面端左右交錯
+ */
+
 #experience {
+  // 漸層背景
   background: linear-gradient(
     180deg,
     transparent 0%,
@@ -7,8 +14,10 @@
   );
 }
 
+// 時間軸項目 - 桌面端交錯佈局
 .timeline-item {
   @media (min-width: 768px) {
+    // 奇數項目（左側）
     &:nth-child(odd) {
       padding-right: 50%;
 
@@ -17,6 +26,7 @@
       }
     }
 
+    // 偶數項目（右側）
     &:nth-child(even) {
       padding-left: 50%;
 
@@ -25,12 +35,10 @@
       }
     }
   }
-}
 
-// Expand indicator styling
-.timeline-item {
+  // 內容卡片樣式
   .glass-card {
-    // Ensure expand indicator icons are properly sized
+    // 確保展開指示器圖標大小正確
     .flex.items-center.gap-1 {
       svg {
         width: 1rem;
@@ -39,7 +47,7 @@
       }
     }
 
-    // Achievement list icons
+    // 成就列表圖標大小
     .flex.items-center.gap-2 svg {
       width: 1rem;
       height: 1rem;
@@ -47,6 +55,3 @@
     }
   }
 }
-
-// Improve card layout on mobile
-// Handled by Tailwind classes in HTML now
