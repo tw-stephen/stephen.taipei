@@ -1,55 +1,13 @@
 /**
  * Achievements 組件樣式
+ * - 專業簡潔設計
  * - 成就卡片效果
- * - 浮動粒子（已優化）
- * - 性能優化
  */
 
 #achievements {
-  background: linear-gradient(180deg, transparent 0%, rgba(10, 17, 40, 0.5) 50%, transparent 100%);
+  background: linear-gradient(180deg, transparent 0%, rgba(59, 130, 246, 0.02) 50%, transparent 100%);
 }
 
-// 優化浮動動畫 - 簡化為僅使用 transform
-@keyframes float {
-  0%, 100% {
-    transform: translateY(0) translateZ(0);
-  }
-  50% {
-    transform: translateY(-15px) translateZ(0);
-  }
-}
-
-.animate-float {
-  animation: float 10s ease-in-out infinite;
-  will-change: transform;
-  opacity: 0.3;
-
-  // 在低性能設備上禁用
-  @media (prefers-reduced-motion: reduce) {
-    animation: none;
-  }
-
-  // 在小螢幕上隱藏以節省資源
-  @media (max-width: 639px) {
-    display: none;
-  }
-}
-
-// 成就卡片優化
-.glass-card {
-  transform: translateZ(0);
-
-  &.hover-glow {
-    transition: transform 0.2s cubic-bezier(0.4, 0, 0.2, 1),
-                box-shadow 0.2s cubic-bezier(0.4, 0, 0.2, 1);
-
-    &:active {
-      transform: scale(0.97) translateZ(0);
-    }
-  }
-}
-
-// 計數器動畫優化
 .counter-value {
   font-variant-numeric: tabular-nums;
 }

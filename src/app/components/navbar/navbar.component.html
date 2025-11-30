@@ -1,35 +1,32 @@
 <nav
   class="fixed top-0 left-0 right-0 z-50 transition-all duration-300 safe-area-padding"
-  [class.bg-deep-space]="isScrolled()"
+  [class.bg-dark]="isScrolled()"
   [class.bg-opacity-95]="isScrolled()"
-  [class.backdrop-blur-xl]="isScrolled()"
-  [class.shadow-lg]="isScrolled()"
-  [class.shadow-neon-cyan/10]="isScrolled()"
+  [class.backdrop-blur-lg]="isScrolled()"
+  [class.border-b]="isScrolled()"
+  [class.border-white/5]="isScrolled()"
 >
-  <div class="container mx-auto px-4 sm:px-6 lg:px-8">
-    <div class="flex items-center justify-between h-16 sm:h-18 md:h-20">
+  <div class="container mx-auto">
+    <div class="flex items-center justify-between h-16 md:h-20">
       <!-- Logo -->
       <a
         href="#"
-        class="flex items-center space-x-2 group min-h-[44px]"
+        class="flex items-center gap-2 group min-h-[44px]"
         (click)="scrollTo('#hero', $event)"
       >
-        <span class="text-xl sm:text-2xl font-bold font-display text-gradient">S.</span>
-        <span class="hidden sm:block text-base sm:text-lg font-medium text-gray-300 group-hover:text-neon-cyan transition-colors">
-          Stephen
-        </span>
+        <span class="text-xl font-bold text-gradient">Stephen</span>
+        <span class="hidden sm:block text-sm text-muted">/ 全端工程師</span>
       </a>
 
       <!-- Desktop Navigation -->
-      <div class="hidden lg:flex items-center space-x-6 xl:space-x-8">
+      <div class="hidden lg:flex items-center gap-8">
         @for (link of navLinks; track link.href) {
           <a
             [href]="link.href"
-            class="nav-link relative text-gray-300 hover:text-neon-cyan transition-colors duration-300 font-medium text-sm xl:text-base py-2"
+            class="text-muted hover:text-light transition-colors duration-200 text-sm font-medium"
             (click)="scrollTo(link.href, $event)"
           >
             {{ link.label }}
-            <span class="nav-underline absolute bottom-0 left-0 w-0 h-0.5 bg-gradient-to-r from-neon-cyan to-neon-pink transition-all duration-300"></span>
           </a>
         }
       </div>
@@ -38,16 +35,16 @@
       <div class="hidden lg:block">
         <a
           href="#contact"
-          class="btn-primary text-sm px-4 py-2"
+          class="btn-primary text-sm px-5 py-2.5"
           (click)="scrollTo('#contact', $event)"
         >
           聯絡我
         </a>
       </div>
 
-      <!-- Mobile Menu Button - 增大觸控區域 -->
+      <!-- Mobile Menu Button -->
       <button
-        class="lg:hidden flex items-center justify-center w-11 h-11 rounded-lg text-gray-300 hover:text-neon-cyan hover:bg-neon-cyan/10 transition-all"
+        class="lg:hidden flex items-center justify-center w-11 h-11 rounded-lg text-muted hover:text-light hover:bg-white/5 transition-all"
         (click)="toggleMobileMenu()"
         [attr.aria-expanded]="isMobileMenuOpen()"
         aria-label="開啟選單"
@@ -63,26 +60,25 @@
     </div>
   </div>
 
-  <!-- Mobile Menu - 改善動畫和佈局 -->
+  <!-- Mobile Menu -->
   @if (isMobileMenuOpen()) {
     <div
-      class="lg:hidden glass-card border-t border-neon-cyan/20 overflow-hidden"
+      class="lg:hidden card-static border-t border-white/5 overflow-hidden"
       @slideDown
     >
-      <div class="container mx-auto px-4 py-3 sm:py-4">
+      <div class="container mx-auto py-4">
         <div class="space-y-1">
           @for (link of navLinks; track link.href; let i = $index) {
             <a
               [href]="link.href"
-              class="flex items-center py-3 px-3 rounded-lg text-gray-300 hover:text-neon-cyan hover:bg-neon-cyan/5 transition-all font-medium"
+              class="flex items-center py-3 px-4 rounded-lg text-muted hover:text-light hover:bg-white/5 transition-all font-medium"
               (click)="scrollTo(link.href, $event)"
-              [style.animation-delay]="(i * 50) + 'ms'"
             >
               {{ link.label }}
             </a>
           }
         </div>
-        <div class="pt-3 mt-3 border-t border-gray-700/50">
+        <div class="pt-4 mt-4 border-t border-white/5">
           <a
             href="#contact"
             class="btn-primary w-full text-center text-sm"
