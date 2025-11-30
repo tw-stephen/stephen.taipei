@@ -1,7 +1,29 @@
+/**
+ * stephen.taipei - 全局樣式表
+ * ============================================
+ *
+ * 主題色彩系統：
+ * - deep-space (#0a1128): 主背景色，深空藍
+ * - neon-cyan (#00d9ff): 主要強調色，霓虹青
+ * - deep-purple (#2d1b69): 輔助色，深紫
+ * - neon-pink (#ff006e): 輔助強調色，霓虹粉
+ *
+ * 字體：
+ * - Orbitron: 標題字體（科幻風格）
+ * - Inter: 英文內文
+ * - Noto Sans TC: 中文內文
+ *
+ * 注意：Google Fonts 在 index.html 中使用 <link> 預載入，
+ *       避免在 SCSS 中使用 @import url() 導致構建時內聯失敗
+ */
+
 @use "tailwindcss";
 
-// Theme Configuration for TailwindCSS v4
+// ============================================
+// TailwindCSS v4 主題配置
+// ============================================
 @theme {
+  // 主題色彩變數
   --color-deep-space: #0a1128;
   --color-neon-cyan: #00d9ff;
   --color-deep-purple: #2d1b69;
@@ -9,13 +31,11 @@
   --color-light-gray: #f5f5f5;
   --color-dark-gray: #1a1a1a;
 
+  // 字體設定
   --font-display: "Orbitron", sans-serif;
   --font-body: "Inter", sans-serif;
   --font-chinese: "Noto Sans TC", sans-serif;
 }
-
-// Google Fonts
-@import url("https://fonts.googleapis.com/css2?family=Orbitron:wght@400;500;600;700;800;900&family=Inter:wght@300;400;500;600;700&family=Noto+Sans+TC:wght@300;400;500;700&display=swap");
 
 // CSS Variables
 :root {

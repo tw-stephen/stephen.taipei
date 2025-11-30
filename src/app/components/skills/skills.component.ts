@@ -1,3 +1,12 @@
+/**
+ * 技能專長組件
+ *
+ * 功能：
+ * - 分類展示技能（前端、後端、DevOps、AI 工具）
+ * - 使用 Signal 管理當前選中的分類
+ * - 進度條動畫展示技能等級
+ * - 常用技術棧圖標展示
+ */
 import { Component, ElementRef, AfterViewInit, ViewChild, signal } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import gsap from 'gsap';
@@ -5,17 +14,19 @@ import { ScrollTrigger } from 'gsap/ScrollTrigger';
 
 gsap.registerPlugin(ScrollTrigger);
 
+/** 單項技能資料介面 */
 interface Skill {
-  name: string;
-  level: number;
-  color: 'cyan' | 'pink' | 'purple';
+  name: string;                      // 技能名稱
+  level: number;                     // 熟練度 (0-100)
+  color: 'cyan' | 'pink' | 'purple'; // 進度條顏色
 }
 
+/** 技能分類資料介面 */
 interface SkillCategory {
-  id: string;
-  title: string;
-  icon: string;
-  skills: Skill[];
+  id: string;      // 分類 ID
+  title: string;   // 分類標題
+  icon: string;    // SVG path
+  skills: Skill[]; // 該分類下的技能列表
 }
 
 @Component({
