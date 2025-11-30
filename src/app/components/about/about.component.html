@@ -1,138 +1,88 @@
 <section id="about" #aboutSection class="relative">
-  <div class="container mx-auto px-4">
+  <div class="container mx-auto">
     <!-- Section Header -->
-    <div class="text-center mb-10 sm:mb-12 md:mb-16">
+    <div class="text-center mb-12 md:mb-16">
       <h2 class="section-title animate-on-scroll">
         <span class="text-gradient">關於我</span>
       </h2>
       <p class="section-subtitle animate-on-scroll">About Me</p>
     </div>
 
-    <!-- Content Grid - 改善響應式佈局 -->
-    <div
-      class="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-12 xl:gap-16 items-center mb-12 sm:mb-16 md:mb-20"
-    >
-      <!-- Left: Profile Image / Avatar -->
-      <div class="animate-on-scroll flex justify-center lg:justify-end order-1 lg:order-1">
-        <div class="relative">
-          <!-- Glowing border -->
-          <div
-            class="absolute -inset-1 bg-gradient-to-r from-neon-cyan to-neon-pink rounded-2xl blur-lg opacity-40 sm:opacity-50"
-          ></div>
-          <!-- Avatar placeholder - 響應式尺寸 -->
-          <div
-            class="relative w-48 h-48 sm:w-56 sm:h-56 md:w-64 md:h-64 lg:w-72 lg:h-72 xl:w-80 xl:h-80 rounded-2xl glass-card flex items-center justify-center overflow-hidden"
-          >
-            <div class="text-6xl sm:text-7xl md:text-8xl lg:text-9xl font-bold text-gradient">S</div>
-            <!-- Decorative elements -->
-            <div
-              class="absolute top-3 right-3 sm:top-4 sm:right-4 w-2 h-2 sm:w-3 sm:h-3 bg-neon-cyan rounded-full animate-pulse"
-            ></div>
-            <div
-              class="absolute bottom-3 left-3 sm:bottom-4 sm:left-4 w-1.5 h-1.5 sm:w-2 sm:h-2 bg-neon-pink rounded-full animate-pulse delay-300"
-            ></div>
+    <!-- Content Grid -->
+    <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-16 items-center mb-16">
+      <!-- Left: Avatar -->
+      <div class="animate-on-scroll flex justify-center lg:justify-end">
+        <div class="relative w-56 h-56 sm:w-64 sm:h-64 md:w-72 md:h-72 lg:w-80 lg:h-80">
+          <div class="absolute inset-0 bg-gradient-to-br from-primary/20 to-secondary/20 rounded-2xl"></div>
+          <div class="relative w-full h-full rounded-2xl card-static flex items-center justify-center overflow-hidden">
+            <span class="text-7xl sm:text-8xl md:text-9xl font-bold text-gradient">S</span>
           </div>
         </div>
       </div>
 
       <!-- Right: Bio -->
-      <div class="space-y-4 sm:space-y-5 md:space-y-6 animate-on-scroll order-2 lg:order-2 text-center lg:text-left">
-        <h3 class="text-xl sm:text-2xl md:text-3xl font-bold text-white">
-          莊宗憲 <span class="text-neon-cyan">(Stephen)</span>
+      <div class="space-y-6 animate-on-scroll text-center lg:text-left">
+        <h3 class="text-2xl md:text-3xl font-bold text-light">
+          莊宗憲 <span class="text-primary font-normal">(Stephen)</span>
         </h3>
 
-        <div class="space-y-3 sm:space-y-4 text-gray-300 leading-relaxed text-sm sm:text-base">
+        <div class="space-y-4 text-muted leading-relaxed">
           <p>
             資深全端工程師，擁有
-            <span class="text-neon-cyan font-medium">AI 平台</span>、<span
-              class="text-neon-pink font-medium"
-              >電商</span
-            >、<span class="text-neon-cyan font-medium">金融</span>及<span
-              class="text-neon-pink font-medium"
-              >教育應用</span
-            >的跨領域開發經驗。擅長架構設計與團隊領導，致力於打造高性能系統。
+            <span class="text-light">AI 平台</span>、<span class="text-light">電商</span>、
+            <span class="text-light">金融</span>及<span class="text-light">教育應用</span>的跨領域開發經驗。
+            擅長架構設計與團隊領導，致力於打造高性能系統。
           </p>
 
           <p>
-            從設計轉身投入資訊管理，再到全端開發，這段旅程讓我具備獨特的<span
-              class="text-neon-cyan font-medium"
-              >產品思維</span
-            >。
+            從設計轉身投入資訊管理，再到全端開發，這段旅程讓我具備獨特的
+            <span class="text-light">產品思維</span>。
           </p>
 
           <p>
-            工作之餘，我曾創辦街舞教室，並獲得<span
-              class="text-neon-pink font-medium"
-              >全國冠軍</span
-            >及<span class="text-neon-cyan font-medium">世界八強</span
-            >的殊榮，這份經歷鍛鍊了我面對挑戰時的專注與毅力。
+            工作之餘，我曾創辦街舞教室，並獲得
+            <span class="text-primary">全國冠軍</span>及
+            <span class="text-primary">世界八強</span>的殊榮，
+            這份經歷鍛鍊了我面對挑戰時的專注與毅力。
           </p>
         </div>
 
-        <!-- Quick Stats - 改善移動端佈局 -->
-        <div class="flex flex-wrap justify-center lg:justify-start gap-4 sm:gap-6 pt-4">
-          <div class="text-center min-w-[70px] sm:min-w-[80px]">
-            <div class="text-2xl sm:text-3xl font-bold text-gradient">10+</div>
-            <div class="text-xs sm:text-sm text-gray-400">年開發經驗</div>
+        <!-- Quick Stats -->
+        <div class="flex flex-wrap justify-center lg:justify-start gap-8 pt-6">
+          <div class="text-center">
+            <div class="text-3xl md:text-4xl font-bold text-gradient">10+</div>
+            <div class="text-sm text-muted">年開發經驗</div>
           </div>
-          <div class="text-center min-w-[70px] sm:min-w-[80px]">
-            <div class="text-2xl sm:text-3xl font-bold text-gradient">50+</div>
-            <div class="text-xs sm:text-sm text-gray-400">專案交付</div>
+          <div class="text-center">
+            <div class="text-3xl md:text-4xl font-bold text-gradient">50+</div>
+            <div class="text-sm text-muted">專案交付</div>
           </div>
-          <div class="text-center min-w-[70px] sm:min-w-[80px]">
-            <div class="text-2xl sm:text-3xl font-bold text-gradient">20K+</div>
-            <div class="text-xs sm:text-sm text-gray-400">服務用戶</div>
+          <div class="text-center">
+            <div class="text-3xl md:text-4xl font-bold text-gradient">20K+</div>
+            <div class="text-sm text-muted">服務用戶</div>
           </div>
         </div>
       </div>
     </div>
 
-    <!-- Core Advantages - 改善響應式網格 -->
-    <div class="advantages-grid grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 sm:gap-5 md:gap-6">
+    <!-- Core Advantages -->
+    <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 md:gap-6">
       @for (advantage of advantages; track advantage.title) {
-      <div
-        class="advantage-card glass-card rounded-xl p-5 sm:p-6 hover-glow group cursor-default"
-      >
-        <!-- Icon -->
-        <div
-          class="w-12 h-12 sm:w-14 sm:h-14 rounded-lg bg-gradient-to-br from-neon-cyan/20 to-neon-pink/20 flex items-center justify-center mb-3 sm:mb-4 group-hover:scale-110 transition-transform"
-        >
-          <svg
-            class="w-6 h-6 sm:w-7 sm:h-7 text-neon-cyan"
-            fill="none"
-            stroke="currentColor"
-            viewBox="0 0 24 24"
-          >
-            <path
-              stroke-linecap="round"
-              stroke-linejoin="round"
-              stroke-width="1.5"
-              [attr.d]="advantage.icon"
-            />
-          </svg>
+        <div class="animate-on-scroll card p-6 group cursor-default">
+          <!-- Icon -->
+          <div class="w-12 h-12 rounded-lg bg-primary/10 flex items-center justify-center mb-4 group-hover:bg-primary/20 transition-colors">
+            <svg class="w-6 h-6 text-primary" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" [attr.d]="advantage.icon" />
+            </svg>
+          </div>
+
+          <!-- Title -->
+          <h4 class="text-lg font-semibold text-light mb-2">{{ advantage.title }}</h4>
+
+          <!-- Description -->
+          <p class="text-muted text-sm leading-relaxed">{{ advantage.description }}</p>
         </div>
-
-        <!-- Title -->
-        <h4
-          class="text-base sm:text-lg font-bold text-white mb-1.5 sm:mb-2 group-hover:text-neon-cyan transition-colors"
-        >
-          {{ advantage.title }}
-        </h4>
-
-        <!-- Description -->
-        <p class="text-gray-400 text-xs sm:text-sm leading-relaxed">
-          {{ advantage.description }}
-        </p>
-      </div>
       }
     </div>
   </div>
-
-  <!-- Background Decoration -->
-  <div
-    class="absolute top-1/2 left-0 w-48 sm:w-72 h-48 sm:h-72 bg-neon-cyan/5 rounded-full blur-3xl -translate-y-1/2 pointer-events-none"
-  ></div>
-  <div
-    class="absolute bottom-0 right-0 w-64 sm:w-96 h-64 sm:h-96 bg-neon-pink/5 rounded-full blur-3xl pointer-events-none"
-  ></div>
 </section>
