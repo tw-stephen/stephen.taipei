@@ -1,16 +1,30 @@
+/**
+ * Hero 組件樣式
+ * - Three.js 粒子背景
+ * - 響應式佈局
+ * - 動畫效果
+ */
+
 #hero {
   background: radial-gradient(
     ellipse at center,
-    rgba(45, 27, 105, 0.3) 0%,
-    transparent 70%
+    rgba(45, 27, 105, 0.4) 0%,
+    transparent 60%
   );
+
+  // 確保在 iOS Safari 上正確顯示
+  @supports (-webkit-touch-callout: none) {
+    min-height: -webkit-fill-available;
+  }
 }
 
 canvas {
   display: block;
+  width: 100%;
+  height: 100%;
 }
 
-// Hero content improvements
+// Hero 內容包裝器
 .hero-content-wrapper {
   width: 100%;
   max-width: 64rem;
@@ -26,25 +40,99 @@ canvas {
   }
 }
 
-// Ensure buttons are properly centered on mobile
-#hero .flex.flex-col.sm\\:flex-row {
+// 確保按鈕在移動端正確顯示
+#hero .flex.flex-col {
   width: 100%;
 
   @media (max-width: 639px) {
-    gap: 1rem; // Add gap for stacked buttons
+    gap: 0.75rem;
 
     a {
       width: 100%;
-      max-width: 100%; // Allow full width
-      justify-content: center;
+      max-width: 280px;
+      margin: 0 auto;
     }
   }
 }
 
-// Scroll indicator proper sizing
+// 打字機光標動畫
+.hero-subtitle .animate-pulse {
+  animation: cursorBlink 1s ease-in-out infinite;
+}
+
+@keyframes cursorBlink {
+  0%, 50% {
+    opacity: 1;
+  }
+  51%, 100% {
+    opacity: 0;
+  }
+}
+
+// 標題入場動畫
+.hero-title {
+  animation: heroTitleIn 1s ease-out forwards;
+}
+
+.hero-subtitle {
+  animation: heroSubtitleIn 1s ease-out 0.2s forwards;
+  opacity: 0;
+}
+
+.hero-cta {
+  animation: heroCTAIn 0.8s ease-out 0.5s forwards;
+  opacity: 0;
+}
+
+@keyframes heroTitleIn {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes heroSubtitleIn {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes heroCTAIn {
+  from {
+    opacity: 0;
+    transform: translateY(15px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+// 滾動指示器
 .animate-bounce {
   svg {
-    width: 2rem;
-    height: 2rem;
+    width: 1.75rem;
+    height: 1.75rem;
+
+    @media (min-width: 640px) {
+      width: 2rem;
+      height: 2rem;
+    }
+  }
+}
+
+// 發光文字效果在移動端減弱
+.glow-text {
+  @media (max-width: 639px) {
+    text-shadow: 0 0 8px var(--neon-cyan), 0 0 16px var(--neon-cyan);
   }
 }
