@@ -1,16 +1,19 @@
 import React from 'react';
 import { Mail, Github, Linkedin, MapPin } from 'lucide-react';
+import { useLanguage } from '../i18n/LanguageContext';
 
 const Contact = () => {
+  const { t } = useLanguage();
+
   return (
     <section id="contact" className="py-20 bg-white">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-12">
 
           <div>
-            <h2 className="text-3xl font-bold text-gray-900 mb-6">Let's Connect</h2>
+            <h2 className="text-3xl font-bold text-gray-900 mb-6">{t.contact.title}</h2>
             <p className="text-gray-600 mb-8 text-lg">
-              Whether you have a question, a project idea, or just want to discuss the latest in tech or dance, feel free to reach out.
+              {t.contact.subtitle}
             </p>
 
             <div className="space-y-6">
@@ -19,7 +22,7 @@ const Contact = () => {
                   <Mail className="w-5 h-5" />
                 </div>
                 <div>
-                  <p className="text-sm text-gray-500 font-medium">Email</p>
+                  <p className="text-sm text-gray-500 font-medium">{t.contact.email}</p>
                   <a href="mailto:contact@stephen.taipei" className="text-gray-900 font-semibold hover:text-primary transition-colors">
                     contact@stephen.taipei
                   </a>
@@ -31,8 +34,8 @@ const Contact = () => {
                   <MapPin className="w-5 h-5" />
                 </div>
                 <div>
-                  <p className="text-sm text-gray-500 font-medium">Location</p>
-                  <p className="text-gray-900 font-semibold">Taipei, Taiwan</p>
+                  <p className="text-sm text-gray-500 font-medium">{t.contact.location}</p>
+                  <p className="text-gray-900 font-semibold">{t.contact.locationValue}</p>
                 </div>
               </div>
 
@@ -50,19 +53,19 @@ const Contact = () => {
           <div className="bg-gray-50 p-8 rounded-2xl border border-gray-100">
             <form className="space-y-6">
               <div>
-                <label className="block text-sm font-medium text-gray-700 mb-2">Name</label>
-                <input type="text" className="w-full px-4 py-3 rounded-lg border border-gray-200 focus:ring-2 focus:ring-primary/20 focus:border-primary transition-colors outline-none bg-white" placeholder="John Doe" />
+                <label className="block text-sm font-medium text-gray-700 mb-2">{t.contact.formName}</label>
+                <input type="text" className="w-full px-4 py-3 rounded-lg border border-gray-200 focus:ring-2 focus:ring-primary/20 focus:border-primary transition-colors outline-none bg-white" placeholder={t.contact.formNamePlaceholder} />
               </div>
               <div>
-                <label className="block text-sm font-medium text-gray-700 mb-2">Email</label>
-                <input type="email" className="w-full px-4 py-3 rounded-lg border border-gray-200 focus:ring-2 focus:ring-primary/20 focus:border-primary transition-colors outline-none bg-white" placeholder="john@example.com" />
+                <label className="block text-sm font-medium text-gray-700 mb-2">{t.contact.formEmail}</label>
+                <input type="email" className="w-full px-4 py-3 rounded-lg border border-gray-200 focus:ring-2 focus:ring-primary/20 focus:border-primary transition-colors outline-none bg-white" placeholder={t.contact.formEmailPlaceholder} />
               </div>
               <div>
-                <label className="block text-sm font-medium text-gray-700 mb-2">Message</label>
-                <textarea rows="4" className="w-full px-4 py-3 rounded-lg border border-gray-200 focus:ring-2 focus:ring-primary/20 focus:border-primary transition-colors outline-none bg-white" placeholder="Hello Stephen..."></textarea>
+                <label className="block text-sm font-medium text-gray-700 mb-2">{t.contact.formMessage}</label>
+                <textarea rows="4" className="w-full px-4 py-3 rounded-lg border border-gray-200 focus:ring-2 focus:ring-primary/20 focus:border-primary transition-colors outline-none bg-white" placeholder={t.contact.formMessagePlaceholder}></textarea>
               </div>
               <button type="button" className="w-full px-6 py-3 bg-primary hover:bg-primary-dark text-white font-medium rounded-lg transition-colors shadow-lg shadow-blue-500/30">
-                Send Message
+                {t.contact.sendMessage}
               </button>
             </form>
           </div>

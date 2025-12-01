@@ -1,44 +1,49 @@
 import React, { useState } from 'react';
 import { motion } from 'framer-motion';
 import { Code, Database, Server, Cpu } from 'lucide-react';
+import { useLanguage } from '../i18n/LanguageContext';
 
 const Skills = () => {
   const [activeTab, setActiveTab] = useState('Frontend');
+  const { t, language } = useLanguage();
 
   const categories = [
-    { id: 'Frontend', icon: Code, label: 'Frontend' },
-    { id: 'Backend', icon: Server, label: 'Backend' },
-    { id: 'DevOps', icon: Database, label: 'DevOps' },
-    { id: 'AI', icon: Cpu, label: 'AI Tools' },
+    { id: 'Frontend', icon: Code, label: t.skills.frontend },
+    { id: 'Backend', icon: Server, label: t.skills.backend },
+    { id: 'DevOps', icon: Database, label: t.skills.devops },
+    { id: 'AI', icon: Cpu, label: t.skills.ai },
   ];
 
+  // Skills data based on resume - NO React/Vite
   const skillsData = {
     Frontend: [
-      { name: 'Angular (Signal, Zoneless)', level: 95 },
-      { name: 'React / Next.js', level: 90 },
-      { name: 'TailwindCSS / SCSS', level: 95 },
-      { name: 'Vue.js', level: 85 },
-      { name: 'Motion / GSAP', level: 80 },
+      { name: 'Angular 19 (Signal / Computed / Effect)', level: 95 },
+      { name: 'Nx Monorepo', level: 90 },
+      { name: 'Vue.js', level: 80 },
+      { name: 'jQuery', level: 85 },
+      { name: 'PWA', level: 90 },
     ],
     Backend: [
-      { name: 'Laravel (Octane/Swoole)', level: 90 },
-      { name: 'Node.js', level: 85 },
-      { name: 'WebSocket', level: 85 },
-      { name: 'MySQL / PostgreSQL', level: 90 },
-      { name: 'Redis', level: 85 },
+      { name: 'Laravel Octane + Swoole', level: 95 },
+      { name: 'WebSocket Server', level: 90 },
+      { name: language === 'zh' ? 'MySQL (讀寫分離)' : 'MySQL (Read/Write Separation)', level: 90 },
+      { name: language === 'zh' ? 'Redis (快取策略)' : 'Redis (Caching Strategy)', level: 90 },
+      { name: 'PHP (Smarty)', level: 85 },
     ],
     DevOps: [
-      { name: 'Docker / Kubernetes', level: 80 },
+      { name: 'Ubuntu + Nginx', level: 90 },
+      { name: 'Apache', level: 85 },
+      { name: 'Docker', level: 80 },
+      { name: 'GCP / Vultr', level: 85 },
+      { name: 'Github CI/CD', level: 85 },
       { name: 'GitLab CI/CD', level: 85 },
-      { name: 'GCP / AWS', level: 80 },
-      { name: 'Nx Monorepo', level: 85 },
-      { name: 'Nginx', level: 85 },
     ],
     AI: [
-      { name: 'OpenAI API Integration', level: 90 },
-      { name: 'Cursor AI Workflow', level: 95 },
-      { name: 'Claude / LLM Prompting', level: 90 },
-      { name: 'AI Model Tuning Basics', level: 75 },
+      { name: 'OpenAI API', level: 95 },
+      { name: 'Cursor + Claude + Codex + Gemini', level: 95 },
+      { name: language === 'zh' ? 'AI 繪圖應用' : 'AI Image Generation', level: 85 },
+      { name: 'LINE / WeChat API', level: 85 },
+      { name: language === 'zh' ? '支付寶 / Google 串接' : 'Alipay / Google Integration', level: 85 },
     ]
   };
 
@@ -46,8 +51,8 @@ const Skills = () => {
     <section id="skills" className="py-20 bg-gray-50">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="text-center mb-16">
-          <h2 className="text-3xl font-bold text-gray-900">Technical Expertise</h2>
-          <p className="mt-4 text-gray-600">A comprehensive toolset for building modern digital solutions.</p>
+          <h2 className="text-3xl font-bold text-gray-900">{t.skills.title}</h2>
+          <p className="mt-4 text-gray-600">{t.skills.subtitle}</p>
         </div>
 
         <div className="flex flex-wrap justify-center gap-4 mb-12">

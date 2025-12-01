@@ -1,8 +1,11 @@
 import React from 'react';
 import { motion } from 'framer-motion';
 import { ArrowDown } from 'lucide-react';
+import { useLanguage } from '../i18n/LanguageContext';
 
 const Hero = () => {
+  const { t } = useLanguage();
+
   return (
     <section id="hero" className="relative min-h-screen flex items-center justify-center bg-gradient-to-br from-gray-50 to-white overflow-hidden">
       {/* Abstract Background Shapes */}
@@ -18,26 +21,25 @@ const Hero = () => {
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8 }}
         >
-          <h2 className="text-xl md:text-2xl font-semibold text-primary mb-4 tracking-wide uppercase">
-            Stephen Chuang
+          <h2 className="text-xl md:text-2xl font-semibold text-primary mb-4 tracking-wide">
+            {t.hero.name}
           </h2>
           <h1 className="text-4xl md:text-6xl lg:text-7xl font-bold text-gray-900 mb-6 tracking-tight">
-            Senior Full Stack <br />
+            {t.hero.title} <br />
             <span className="bg-gradient-to-r from-primary to-secondary bg-clip-text text-transparent">
-              Engineer & Architect
+              {t.hero.subtitle}
             </span>
           </h1>
           <p className="mt-4 max-w-2xl mx-auto text-xl text-gray-600 mb-10 leading-relaxed">
-            Specializing in high-performance systems, Angular/React architectures, and AI integration.
-            Bridging the gap between complex technology and elegant user experiences.
+            {t.hero.description}
           </p>
 
           <div className="flex justify-center gap-4">
             <a href="#portfolio" className="px-8 py-3 bg-primary hover:bg-primary-dark text-white rounded-full font-medium transition-colors shadow-lg hover:shadow-xl transform hover:-translate-y-0.5">
-              View Work
+              {t.hero.viewWork}
             </a>
             <a href="#contact" className="px-8 py-3 bg-white hover:bg-gray-50 text-gray-900 border border-gray-200 rounded-full font-medium transition-all shadow-sm hover:shadow-md">
-              Contact Me
+              {t.hero.contactMe}
             </a>
           </div>
         </motion.div>

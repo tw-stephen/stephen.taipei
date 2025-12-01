@@ -1,46 +1,17 @@
 import React from 'react';
 import { Briefcase } from 'lucide-react';
+import { useLanguage } from '../i18n/LanguageContext';
 
 const Experience = () => {
-  const experiences = [
-    {
-      company: 'Sheng He Technology',
-      role: 'Senior Engineer',
-      period: '2024/1 - Present',
-      description: [
-        'Implemented Nx Monorepo architecture to integrate multiple projects and share modules.',
-        'Upgraded system to Angular 21 (conceptual), fully adopting Signal/Zoneless architecture.',
-        'Optimized performance by refactoring legacy code (1000 lines → 200 lines), boosting development efficiency.',
-        'Led a 2-4 person frontend team, establishing a culture of technical sharing and code reviews.'
-      ]
-    },
-    {
-      company: 'Shang Shang Design',
-      role: 'Full-stack Engineer',
-      period: '2014/1 - 2023/11',
-      description: [
-        'Developed a Direct Sales E-commerce Platform (Angular PWA + Laravel), growing from 0 to 20,000 members.',
-        'Implemented Redis caching, reducing database queries by 70%.',
-        'Built an Electronic Contract Platform and Personalized Recommendation Algorithms.'
-      ]
-    },
-    {
-      company: 'Xin Lin Yang Consultancy',
-      role: 'Engineer',
-      period: '2013/1 - 2014/1',
-      description: [
-        'Developed internal administrative management systems and foreclosure information systems.'
-      ]
-    }
-  ];
+  const { t } = useLanguage();
 
   return (
     <section id="experience" className="py-20 bg-white">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <h2 className="text-3xl font-bold text-gray-900 mb-12 text-center">Professional Journey</h2>
+        <h2 className="text-3xl font-bold text-gray-900 mb-12 text-center">{t.experience.title}</h2>
 
         <div className="relative border-l-2 border-gray-200 ml-4 md:ml-12 space-y-12">
-          {experiences.map((exp, index) => (
+          {t.experience.jobs.map((exp, index) => (
             <div key={index} className="relative pl-8 md:pl-12">
               <div className="absolute -left-[9px] top-0 w-4 h-4 rounded-full bg-white border-4 border-primary shadow-sm" />
 

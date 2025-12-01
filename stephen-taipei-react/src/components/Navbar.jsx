@@ -1,16 +1,17 @@
 import React, { useState } from 'react';
-import { Menu, X, Github, Linkedin, Mail, ExternalLink, Code, Database, Terminal, Cpu } from 'lucide-react';
-import { motion } from 'framer-motion';
+import { Menu, X, Globe } from 'lucide-react';
+import { useLanguage } from '../i18n/LanguageContext';
 
 const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false);
+  const { language, toggleLanguage, t } = useLanguage();
 
   const navLinks = [
-    { name: 'About', href: '#about' },
-    { name: 'Skills', href: '#skills' },
-    { name: 'Experience', href: '#experience' },
-    { name: 'Portfolio', href: '#portfolio' },
-    { name: 'Contact', href: '#contact' },
+    { name: t.nav.about, href: '#about' },
+    { name: t.nav.skills, href: '#skills' },
+    { name: t.nav.experience, href: '#experience' },
+    { name: t.nav.portfolio, href: '#portfolio' },
+    { name: t.nav.contact, href: '#contact' },
   ];
 
   return (
@@ -23,11 +24,11 @@ const Navbar = () => {
             </span>
           </div>
 
-          <div className="hidden md:block">
-            <div className="ml-10 flex items-baseline space-x-8">
+          <div className="hidden md:flex items-center gap-6">
+            <div className="flex items-baseline space-x-6">
               {navLinks.map((link) => (
                 <a
-                  key={link.name}
+                  key={link.href}
                   href={link.href}
                   className="text-gray-600 hover:text-primary-dark px-3 py-2 rounded-md text-sm font-medium transition-colors duration-200"
                 >
@@ -35,9 +36,28 @@ const Navbar = () => {
                 </a>
               ))}
             </div>
+
+            {/* Language Switcher */}
+            <button
+              onClick={toggleLanguage}
+              className="flex items-center gap-1.5 px-3 py-1.5 text-sm font-medium text-gray-600 hover:text-primary-dark border border-gray-200 rounded-full hover:border-primary/30 transition-all"
+              aria-label="Toggle language"
+            >
+              <Globe className="w-4 h-4" />
+              <span>{language === 'zh' ? 'EN' : '中文'}</span>
+            </button>
           </div>
 
-          <div className="-mr-2 flex md:hidden">
+          <div className="flex items-center gap-2 md:hidden">
+            {/* Mobile Language Switcher */}
+            <button
+              onClick={toggleLanguage}
+              className="p-2 text-gray-600 hover:text-primary-dark"
+              aria-label="Toggle language"
+            >
+              <Globe className="w-5 h-5" />
+            </button>
+
             <button
               onClick={() => setIsOpen(!isOpen)}
               className="inline-flex items-center justify-center p-2 rounded-md text-gray-400 hover:text-gray-500 hover:bg-gray-100 focus:outline-none"
@@ -53,7 +73,7 @@ const Navbar = () => {
           <div className="px-2 pt-2 pb-3 space-y-1 sm:px-3 bg-white border-b border-gray-100 shadow-lg">
             {navLinks.map((link) => (
               <a
-                key={link.name}
+                key={link.href}
                 href={link.href}
                 className="text-gray-600 hover:text-primary-dark block px-3 py-2 rounded-md text-base font-medium"
                 onClick={() => setIsOpen(false)}
