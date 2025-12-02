@@ -51,7 +51,7 @@ export default {
     present: '現在',
     jobs: [
       {
-        company: '勝和科技有限公司',
+        company: '____科技有限公司',
         role: '資深工程師',
         period: '2024/1 - 現在',
         description: [
