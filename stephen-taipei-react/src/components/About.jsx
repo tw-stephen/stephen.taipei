@@ -1,6 +1,6 @@
 import React from 'react';
 import { motion } from 'framer-motion';
-import { User, Award, Zap, Users } from 'lucide-react';
+import { Award, Zap, Users } from 'lucide-react';
 import { useLanguage } from '../i18n/LanguageContext';
 
 const About = () => {
@@ -22,7 +22,7 @@ const About = () => {
               <div className="aspect-[4/3] rounded-2xl bg-gradient-to-tr from-gray-100 to-gray-200 overflow-hidden shadow-xl flex items-center justify-center relative">
                 <div className="absolute inset-0 bg-grid-slate-100 [mask-image:linear-gradient(0deg,white,rgba(255,255,255,0.6))]"></div>
                 <div className="text-center p-8 z-10">
-                  <User className="w-24 h-24 mx-auto text-primary-light mb-4 opacity-80" />
+                  <img src="/stephen.webp" alt={t.hero.name} className="w-24 h-24 mx-auto rounded-full object-cover mb-4" />
                   <p className="text-gray-500 font-medium">{t.hero.name}</p>
                   <p className="text-gray-400 text-sm">{t.about.location}</p>
                 </div>
