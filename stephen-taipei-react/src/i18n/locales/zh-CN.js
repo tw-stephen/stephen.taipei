@@ -6,6 +6,7 @@ export default {
     skills: '技能',
     experience: '经历',
     portfolio: '作品集',
+    tools: '开源工具',
     contact: '联系',
   },
 
@@ -152,6 +153,62 @@ export default {
     formMessage: '留言',
     formMessagePlaceholder: 'Hello Stephen...',
     sendMessage: '发送讯息',
+  },
+
+  // Tools Section
+  tools: {
+    title: 'Stephen 的开源工具',
+    subtitle: '我开发并维护的 8000+ 免费开源工具，涵盖 AI、游戏、开发工具等多个领域，完全开源免费使用',
+    totalCount: '8000+ 免费工具',
+    toolsLabel: '工具',
+    categories: {
+      aiTools: {
+        title: 'AI 本地工具',
+        description: '1000+ 个 AI 工具，完全在浏览器本地执行，零后端、100% 隐私保护',
+      },
+      chromeExtensions: {
+        title: 'Chrome 扩展程序',
+        description: '1000+ 个实用的浏览器扩展程序，提升工作效率与网页体验',
+      },
+      freeGames: {
+        title: '免费游戏',
+        description: '1000+ 个纯前端小游戏，无需安装，打开即玩，完全免费',
+      },
+      miniTools: {
+        title: '迷你工具',
+        description: '1000+ 个纯前端小工具，文字处理、图片编辑、加密解密等实用功能',
+      },
+      tailwindTemplates: {
+        title: 'Tailwind 模板',
+        description: '1000+ 个精美的 Tailwind CSS UI 模板与组件，加速开发',
+      },
+      wasmTools: {
+        title: 'WebAssembly 工具',
+        description: '1000+ 个高性能 WASM 工具，执行速度接近原生应用',
+      },
+      webToys: {
+        title: '网页玩具',
+        description: '1000+ 个有趣的互动式网页玩具，展现前端技术的无限可能',
+      },
+      webWorkers: {
+        title: 'Web Workers 示例',
+        description: '1000+ 个 Web Workers 实现示例，多线程运算不阻塞 UI',
+      },
+    },
+    features: [
+      {
+        title: '完全开源',
+        description: '所有工具完全开源，可自由使用、修改和分发',
+      },
+      {
+        title: '本地执行',
+        description: '所有工具在浏览器本地运行，保护您的隐私',
+      },
+      {
+        title: '持续更新',
+        description: '持续开发新工具，定期更新与维护',
+      },
+    ],
   },
 
   // Footer

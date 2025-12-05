@@ -6,6 +6,7 @@ export default {
     skills: "기술",
     experience: "경력",
     portfolio: "포트폴리오",
+    tools: "오픈소스",
     contact: "문의",
   },
 
@@ -183,6 +184,62 @@ export default {
     formMessage: "메시지",
     formMessagePlaceholder: "Hello Stephen...",
     sendMessage: "메시지 보내기",
+  },
+
+  // Tools Section
+  tools: {
+    title: "Stephen의 오픈소스 도구",
+    subtitle: "AI, 게임, 개발 도구 등 다양한 분야의 8000개 이상의 무료 오픈소스 도구를 개발 및 유지관리 중",
+    totalCount: "8000+ 무료 도구",
+    toolsLabel: "도구",
+    categories: {
+      aiTools: {
+        title: "AI 로컬 도구",
+        description: "브라우저에서 완전히 실행되는 1000개 이상의 AI 도구, 백엔드 불필요, 100% 개인정보 보호",
+      },
+      chromeExtensions: {
+        title: "Chrome 확장 프로그램",
+        description: "생산성과 웹 경험을 향상시키는 1000개 이상의 유용한 브라우저 확장 프로그램",
+      },
+      freeGames: {
+        title: "무료 게임",
+        description: "설치 없이 바로 플레이 가능한 1000개 이상의 프론트엔드 게임, 완전 무료",
+      },
+      miniTools: {
+        title: "미니 도구",
+        description: "텍스트 처리, 이미지 편집, 암호화 등을 위한 1000개 이상의 프론트엔드 유틸리티",
+      },
+      tailwindTemplates: {
+        title: "Tailwind 템플릿",
+        description: "개발 속도를 높이는 1000개 이상의 아름다운 Tailwind CSS UI 템플릿과 컴포넌트",
+      },
+      wasmTools: {
+        title: "WebAssembly 도구",
+        description: "네이티브에 가까운 실행 속도의 1000개 이상의 고성능 WASM 도구",
+      },
+      webToys: {
+        title: "웹 토이",
+        description: "프론트엔드 기술의 무한한 가능성을 보여주는 1000개 이상의 재미있는 인터랙티브 웹 토이",
+      },
+      webWorkers: {
+        title: "Web Workers 예제",
+        description: "UI 블로킹 없는 멀티스레드 계산을 위한 1000개 이상의 Web Workers 구현",
+      },
+    },
+    features: [
+      {
+        title: "완전 오픈소스",
+        description: "모든 도구는 완전히 오픈소스이며, 자유롭게 사용, 수정, 배포 가능",
+      },
+      {
+        title: "로컬 실행",
+        description: "모든 도구는 브라우저에서 로컬로 실행되어 개인정보 보호",
+      },
+      {
+        title: "지속적 업데이트",
+        description: "새로운 도구를 지속적으로 개발하고 정기적인 업데이트와 유지보수",
+      },
+    ],
   },
 
   // Footer

@@ -6,6 +6,7 @@ export default {
     skills: "Kemahiran",
     experience: "Pengalaman",
     portfolio: "Portfolio",
+    tools: "Sumber Terbuka",
     contact: "Hubungi",
   },
 
@@ -165,6 +166,62 @@ export default {
           "Carta fungsi otak",
           "Eksport laporan PDF",
         ],
+      },
+    ],
+  },
+
+  // Tools Section
+  tools: {
+    title: "Stephen's Open Source Tools",
+    subtitle: "8000+ free open source tools I developed and maintain, covering AI, games, development tools and more",
+    totalCount: "8000+ Free Tools",
+    toolsLabel: "Tools",
+    categories: {
+      aiTools: {
+        title: "AI Local Tools",
+        description: "1000+ AI tools running entirely in browser, zero backend, 100% privacy protected",
+      },
+      chromeExtensions: {
+        title: "Chrome Extensions",
+        description: "1000+ useful browser extensions to boost productivity and web experience",
+      },
+      freeGames: {
+        title: "Free Games",
+        description: "1000+ frontend-only games, no installation required, play instantly",
+      },
+      miniTools: {
+        title: "Mini Tools",
+        description: "1000+ frontend-only utilities for text processing, image editing, encryption and more",
+      },
+      tailwindTemplates: {
+        title: "Tailwind Templates",
+        description: "1000+ beautiful Tailwind CSS UI templates and components",
+      },
+      wasmTools: {
+        title: "WebAssembly Tools",
+        description: "1000+ high-performance WASM tools with near-native execution speed",
+      },
+      webToys: {
+        title: "Web Toys",
+        description: "1000+ fun interactive web toys showcasing frontend possibilities",
+      },
+      webWorkers: {
+        title: "Web Workers Examples",
+        description: "1000+ Web Workers implementations for multi-threaded computation",
+      },
+    },
+    features: [
+      {
+        title: "Fully Open Source",
+        description: "All tools are completely open source, free to use, modify and distribute",
+      },
+      {
+        title: "Local Execution",
+        description: "All tools run locally in your browser, protecting your privacy",
+      },
+      {
+        title: "Continuous Updates",
+        description: "Continuously developing new tools with regular updates",
       },
     ],
   },

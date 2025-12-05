@@ -1,0 +1,185 @@
+import React, { useState } from 'react';
+import { ExternalLink, Wrench, Gamepad2, Puzzle, Palette, Cpu, Sparkles, Boxes, Zap } from 'lucide-react';
+import { motion } from 'framer-motion';
+import { useLanguage } from '../i18n/LanguageContext';
+
+const Tools = () => {
+  const { t } = useLanguage();
+  const [hoveredIndex, setHoveredIndex] = useState(null);
+
+  const toolCategories = [
+    {
+      key: 'aiTools',
+      icon: Sparkles,
+      color: 'from-purple-500 to-indigo-600',
+      bgColor: 'bg-purple-50',
+      textColor: 'text-purple-600',
+      count: '1000+',
+      path: '/tools/awesome-ai-local-tools-1000',
+    },
+    {
+      key: 'chromeExtensions',
+      icon: Puzzle,
+      color: 'from-blue-500 to-cyan-600',
+      bgColor: 'bg-blue-50',
+      textColor: 'text-blue-600',
+      count: '1000+',
+      path: '/tools/awesome-chrome-extensions-1000',
+    },
+    {
+      key: 'freeGames',
+      icon: Gamepad2,
+      color: 'from-green-500 to-emerald-600',
+      bgColor: 'bg-green-50',
+      textColor: 'text-green-600',
+      count: '1000+',
+      path: '/tools/awesome-free-games-1000',
+    },
+    {
+      key: 'miniTools',
+      icon: Wrench,
+      color: 'from-orange-500 to-amber-600',
+      bgColor: 'bg-orange-50',
+      textColor: 'text-orange-600',
+      count: '1000+',
+      path: '/tools/awesome-free-mini-tools-1000',
+    },
+    {
+      key: 'tailwindTemplates',
+      icon: Palette,
+      color: 'from-pink-500 to-rose-600',
+      bgColor: 'bg-pink-50',
+      textColor: 'text-pink-600',
+      count: '1000+',
+      path: '/tools/awesome-tailwind-ui-templates-1000',
+    },
+    {
+      key: 'wasmTools',
+      icon: Cpu,
+      color: 'from-red-500 to-orange-600',
+      bgColor: 'bg-red-50',
+      textColor: 'text-red-600',
+      count: '1000+',
+      path: '/tools/awesome-wasm-tools-1000',
+    },
+    {
+      key: 'webToys',
+      icon: Boxes,
+      color: 'from-teal-500 to-cyan-600',
+      bgColor: 'bg-teal-50',
+      textColor: 'text-teal-600',
+      count: '1000+',
+      path: '/tools/awesome-web-toys-1000',
+    },
+    {
+      key: 'webWorkers',
+      icon: Zap,
+      color: 'from-yellow-500 to-orange-600',
+      bgColor: 'bg-yellow-50',
+      textColor: 'text-yellow-600',
+      count: '1000+',
+      path: '/tools/awesome-web-workers-examples-1000',
+    },
+  ];
+
+  return (
+    <section id="tools" className="py-20 bg-gradient-to-b from-white to-gray-50">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div className="text-center mb-16">
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.5 }}
+            viewport={{ once: true }}
+          >
+            <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4">
+              {t.tools.title}
+            </h2>
+            <p className="text-lg text-gray-600 max-w-3xl mx-auto">
+              {t.tools.subtitle}
+            </p>
+            <div className="mt-4 inline-flex items-center gap-2 px-4 py-2 bg-primary/10 text-primary rounded-full text-sm font-medium">
+              <span className="w-2 h-2 bg-green-500 rounded-full animate-pulse"></span>
+              {t.tools.totalCount}
+            </div>
+          </motion.div>
+        </div>
+
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+          {toolCategories.map((category, index) => {
+            const Icon = category.icon;
+            const toolData = t.tools.categories[category.key];
+
+            return (
+              <motion.a
+                key={category.key}
+                href={category.path}
+                target="_blank"
+                rel="noopener noreferrer"
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.5, delay: index * 0.1 }}
+                viewport={{ once: true }}
+                onMouseEnter={() => setHoveredIndex(index)}
+                onMouseLeave={() => setHoveredIndex(null)}
+                className="group relative bg-white rounded-2xl p-6 shadow-sm hover:shadow-xl transition-all duration-300 border border-gray-100 overflow-hidden"
+              >
+                {/* Gradient overlay on hover */}
+                <div className={`absolute inset-0 bg-gradient-to-br ${category.color} opacity-0 group-hover:opacity-5 transition-opacity duration-300`} />
+
+                {/* Icon */}
+                <div className={`inline-flex items-center justify-center w-14 h-14 ${category.bgColor} rounded-xl mb-4 group-hover:scale-110 transition-transform duration-300`}>
+                  <Icon className={`w-7 h-7 ${category.textColor}`} />
+                </div>
+
+                {/* Title */}
+                <h3 className="text-lg font-bold text-gray-900 mb-2 group-hover:text-primary transition-colors">
+                  {toolData.title}
+                </h3>
+
+                {/* Description */}
+                <p className="text-gray-600 text-sm mb-4 line-clamp-2">
+                  {toolData.description}
+                </p>
+
+                {/* Count badge */}
+                <div className="flex items-center justify-between">
+                  <span className={`inline-flex items-center gap-1.5 px-3 py-1 ${category.bgColor} ${category.textColor} text-sm font-semibold rounded-full`}>
+                    {category.count} {t.tools.toolsLabel}
+                  </span>
+                  <ExternalLink className="w-4 h-4 text-gray-400 group-hover:text-primary transition-colors" />
+                </div>
+
+                {/* Hover effect border */}
+                <div className={`absolute bottom-0 left-0 right-0 h-1 bg-gradient-to-r ${category.color} transform scale-x-0 group-hover:scale-x-100 transition-transform duration-300 origin-left`} />
+              </motion.a>
+            );
+          })}
+        </div>
+
+        {/* Features */}
+        <motion.div
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.5, delay: 0.4 }}
+          viewport={{ once: true }}
+          className="mt-16 grid grid-cols-1 md:grid-cols-3 gap-8"
+        >
+          {t.tools.features.map((feature, index) => (
+            <div key={index} className="text-center">
+              <div className="inline-flex items-center justify-center w-12 h-12 bg-primary/10 text-primary rounded-full mb-4">
+                {index === 0 && <Sparkles className="w-6 h-6" />}
+                {index === 1 && <Zap className="w-6 h-6" />}
+                {index === 2 && <Boxes className="w-6 h-6" />}
+              </div>
+              <h4 className="text-lg font-semibold text-gray-900 mb-2">{feature.title}</h4>
+              <p className="text-gray-600 text-sm">{feature.description}</p>
+            </div>
+          ))}
+        </motion.div>
+      </div>
+    </section>
+  );
+};
+
+export default Tools;

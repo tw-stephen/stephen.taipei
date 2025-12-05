@@ -11,6 +11,7 @@ const Navbar = () => {
     { name: t.nav.skills, href: '#skills' },
     { name: t.nav.experience, href: '#experience' },
     { name: t.nav.portfolio, href: '#portfolio' },
+    { name: t.nav.tools, href: '#tools' },
     { name: t.nav.contact, href: '#contact' },
   ];
 

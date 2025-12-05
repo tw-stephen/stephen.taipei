@@ -5,6 +5,7 @@ export default {
     skills: "スキル",
     experience: "経歴",
     portfolio: "ポートフォリオ",
+    tools: "オープンソース",
     contact: "お問い合わせ",
   },
   hero: {
@@ -171,6 +172,61 @@ export default {
     formMessagePlaceholder: "こんにちは、Stephen...",
     sendMessage: "メッセージを送信",
   },
+  tools: {
+    title: "Stephen のオープンソースツール",
+    subtitle: "AI、ゲーム、開発ツールなど多分野にわたる 8000 以上の無料オープンソースツールを開発・メンテナンス中",
+    totalCount: "8000+ 無料ツール",
+    toolsLabel: "ツール",
+    categories: {
+      aiTools: {
+        title: "AI ローカルツール",
+        description: "ブラウザ内で完全に実行される 1000+ の AI ツール、バックエンド不要、100% プライバシー保護",
+      },
+      chromeExtensions: {
+        title: "Chrome 拡張機能",
+        description: "生産性とウェブ体験を向上させる 1000+ の便利なブラウザ拡張機能",
+      },
+      freeGames: {
+        title: "無料ゲーム",
+        description: "インストール不要ですぐに遊べる 1000+ のフロントエンドゲーム、完全無料",
+      },
+      miniTools: {
+        title: "ミニツール",
+        description: "テキスト処理、画像編集、暗号化などの 1000+ のフロントエンドユーティリティ",
+      },
+      tailwindTemplates: {
+        title: "Tailwind テンプレート",
+        description: "開発を加速する 1000+ の美しい Tailwind CSS UI テンプレートとコンポーネント",
+      },
+      wasmTools: {
+        title: "WebAssembly ツール",
+        description: "ネイティブに近い実行速度の 1000+ の高性能 WASM ツール",
+      },
+      webToys: {
+        title: "ウェブトイ",
+        description: "フロントエンド技術の無限の可能性を示す 1000+ の楽しいインタラクティブウェブトイ",
+      },
+      webWorkers: {
+        title: "Web Workers サンプル",
+        description: "UI をブロックしないマルチスレッド計算のための 1000+ の Web Workers 実装",
+      },
+    },
+    features: [
+      {
+        title: "完全オープンソース",
+        description: "すべてのツールは完全にオープンソースで、自由に使用、変更、配布可能",
+      },
+      {
+        title: "ローカル実行",
+        description: "すべてのツールはブラウザでローカル実行され、プライバシーを保護",
+      },
+      {
+        title: "継続的更新",
+        description: "新しいツールを継続的に開発し、定期的に更新とメンテナンス",
+      },
+    ],
+  },
+
   footer: {
     copyright: "全著作権所有",
   },
