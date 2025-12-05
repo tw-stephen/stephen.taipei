@@ -6,6 +6,7 @@ export const translations = {
       skills: '技能',
       experience: '經歷',
       portfolio: '作品集',
+      tools: '工具平台',
       contact: '聯繫',
     },
 
@@ -146,6 +147,57 @@ export const translations = {
       sendMessage: '發送訊息',
     },
 
+    // Tools Platform
+    tools: {
+      badge: '免費工具平台',
+      title: '開源工具集合',
+      subtitle: '8000+ 免費工具，涵蓋 AI、遊戲、開發工具等多個領域，完全開源免費',
+      cta: '探索更多開源專案',
+      viewAll: '查看 GitHub',
+      items: {
+        'ai-local-tools': {
+          title: 'AI 本地工具',
+          description: '1000+ AI 工具，完全在瀏覽器本地執行，零後端、100% 隱私保護',
+          count: '1000+ 工具',
+        },
+        'chrome-extensions': {
+          title: 'Chrome 擴充套件',
+          description: '精選 Chrome 瀏覽器擴充套件，提升工作效率與瀏覽體驗',
+          count: '1000+ 套件',
+        },
+        'free-games': {
+          title: '免費遊戲',
+          description: '純前端實作的網頁遊戲，無需下載安裝，開啟即玩',
+          count: '1000+ 遊戲',
+        },
+        'mini-tools': {
+          title: '迷你工具',
+          description: '各種實用小工具，包含轉換器、計算器、產生器等',
+          count: '1000+ 工具',
+        },
+        'tailwind-ui': {
+          title: 'Tailwind UI 模板',
+          description: '精美的 Tailwind CSS UI 元件與頁面模板',
+          count: '1000+ 模板',
+        },
+        'wasm-tools': {
+          title: 'WebAssembly 工具',
+          description: '利用 WebAssembly 技術打造的高效能工具',
+          count: '1000+ 工具',
+        },
+        'web-toys': {
+          title: '網頁互動玩具',
+          description: '有趣的網頁互動體驗，包含動畫、視覺效果等',
+          count: '1000+ 玩具',
+        },
+        'web-workers': {
+          title: 'Web Workers 範例',
+          description: '多執行緒處理範例，提升網頁應用效能',
+          count: '1000+ 範例',
+        },
+      },
+    },
+
     // Footer
     footer: {
       copyright: '版權所有',
@@ -159,6 +211,7 @@ export const translations = {
       skills: 'Skills',
       experience: 'Experience',
       portfolio: 'Portfolio',
+      tools: 'Tools',
       contact: 'Contact',
     },
 
@@ -297,6 +350,57 @@ export const translations = {
       formMessage: 'Message',
       formMessagePlaceholder: 'Hello Stephen...',
       sendMessage: 'Send Message',
+    },
+
+    // Tools Platform
+    tools: {
+      badge: 'Free Tools Platform',
+      title: 'Open Source Tools Collection',
+      subtitle: '8000+ free tools covering AI, games, development tools, and more - completely open source',
+      cta: 'Explore more open source projects',
+      viewAll: 'View GitHub',
+      items: {
+        'ai-local-tools': {
+          title: 'AI Local Tools',
+          description: '1000+ AI tools running entirely in browser, zero backend, 100% privacy protected',
+          count: '1000+ Tools',
+        },
+        'chrome-extensions': {
+          title: 'Chrome Extensions',
+          description: 'Curated Chrome browser extensions to boost productivity and browsing experience',
+          count: '1000+ Extensions',
+        },
+        'free-games': {
+          title: 'Free Games',
+          description: 'Frontend web games, no download required, play instantly',
+          count: '1000+ Games',
+        },
+        'mini-tools': {
+          title: 'Mini Tools',
+          description: 'Various utility tools including converters, calculators, and generators',
+          count: '1000+ Tools',
+        },
+        'tailwind-ui': {
+          title: 'Tailwind UI Templates',
+          description: 'Beautiful Tailwind CSS UI components and page templates',
+          count: '1000+ Templates',
+        },
+        'wasm-tools': {
+          title: 'WebAssembly Tools',
+          description: 'High-performance tools built with WebAssembly technology',
+          count: '1000+ Tools',
+        },
+        'web-toys': {
+          title: 'Web Toys',
+          description: 'Fun interactive web experiences including animations and visual effects',
+          count: '1000+ Toys',
+        },
+        'web-workers': {
+          title: 'Web Workers Examples',
+          description: 'Multi-threading examples to boost web application performance',
+          count: '1000+ Examples',
+        },
+      },
     },
 
     // Footer
