@@ -99,13 +99,22 @@ const categoryConfigs = {
       '07-testimonials': { name: 'Testimonials', nameTw: '推薦' },
       '08-team': { name: 'Team', nameTw: '團隊' },
       '09-gallery': { name: 'Gallery', nameTw: '圖廊' },
+      '10-footers': { name: 'Footers', nameTw: '頁尾' },
       '10-forms': { name: 'Forms', nameTw: '表單' },
-      '20-landing-pages': { name: 'Landing Pages', nameTw: '登陸頁面' }
+      '11-authentication': { name: 'Authentication', nameTw: '身份驗證' },
+      '13-modals': { name: 'Modals', nameTw: '彈窗' },
+      '14-notifications': { name: 'Notifications', nameTw: '通知' },
+      '20-landing-pages': { name: 'Landing Pages', nameTw: '登陸頁面' },
+      '99-dashboard': { name: 'Dashboard', nameTw: '儀表板' },
+      '100-ecommerce': { name: 'E-commerce', nameTw: '電商' },
+      '101-blog': { name: 'Blog', nameTw: '部落格' },
+      '102-community': { name: 'Community', nameTw: '社群' }
     },
     parseToolFile: (filename, subCategory) => {
       // Match patterns: nav-001.html, hero-001.html, feat-001.html, content-001.html,
       // cta-001.html, price-001.html, test-001.html, team-001.html, gallery-001.html,
-      // form-001.html, landing-040.html
+      // footer-001.html, form-001.html, auth-001.html, modal-001.html, notification-001.html,
+      // landing-040.html, dashboard-904.html, ecommerce-926.html, blog-951.html, community-1000.html
       const match = filename.match(/^([a-z-]+)-(\d+)\.html$/);
       if (match) {
         const prefix = match[1];
@@ -121,8 +130,16 @@ const categoryConfigs = {
           '07-testimonials': { prefix: 'test', name: 'Testimonial', nameTw: '推薦' },
           '08-team': { prefix: 'team', name: 'Team', nameTw: '團隊' },
           '09-gallery': { prefix: 'gallery', name: 'Gallery', nameTw: '圖廊' },
+          '10-footers': { prefix: 'footer', name: 'Footer', nameTw: '頁尾' },
           '10-forms': { prefix: 'form', name: 'Form', nameTw: '表單' },
-          '20-landing-pages': { prefix: 'landing', name: 'Landing Page', nameTw: '登陸頁面' }
+          '11-authentication': { prefix: 'auth', name: 'Authentication', nameTw: '身份驗證' },
+          '13-modals': { prefix: 'modal', name: 'Modal', nameTw: '彈窗' },
+          '14-notifications': { prefix: 'notification', name: 'Notification', nameTw: '通知' },
+          '20-landing-pages': { prefix: 'landing', name: 'Landing Page', nameTw: '登陸頁面' },
+          '99-dashboard': { prefix: 'dashboard', name: 'Dashboard', nameTw: '儀表板' },
+          '100-ecommerce': { prefix: 'ecommerce', name: 'E-commerce', nameTw: '電商' },
+          '101-blog': { prefix: 'blog', name: 'Blog', nameTw: '部落格' },
+          '102-community': { prefix: 'community', name: 'Community', nameTw: '社群' }
         };
 
         const category = categoryMap[subCategory];
@@ -441,10 +458,26 @@ export function getToolUrl(categoryId, toolSlug) {
       return \`/open-source/\${category.submodule}/\${category.toolsDir}/08-team/\${toolSlug}.html\`;
     } else if (toolSlug.startsWith('gallery-')) {
       return \`/open-source/\${category.submodule}/\${category.toolsDir}/09-gallery/\${toolSlug}.html\`;
+    } else if (toolSlug.startsWith('footer-')) {
+      return \`/open-source/\${category.submodule}/\${category.toolsDir}/10-footers/\${toolSlug}.html\`;
     } else if (toolSlug.startsWith('form-')) {
       return \`/open-source/\${category.submodule}/\${category.toolsDir}/10-forms/\${toolSlug}.html\`;
+    } else if (toolSlug.startsWith('auth-')) {
+      return \`/open-source/\${category.submodule}/\${category.toolsDir}/11-authentication/\${toolSlug}.html\`;
+    } else if (toolSlug.startsWith('modal-')) {
+      return \`/open-source/\${category.submodule}/\${category.toolsDir}/13-modals/\${toolSlug}.html\`;
+    } else if (toolSlug.startsWith('notification-')) {
+      return \`/open-source/\${category.submodule}/\${category.toolsDir}/14-notifications/\${toolSlug}.html\`;
     } else if (toolSlug.startsWith('landing-')) {
       return \`/open-source/\${category.submodule}/\${category.toolsDir}/20-landing-pages/\${toolSlug}.html\`;
+    } else if (toolSlug.startsWith('dashboard-')) {
+      return \`/open-source/\${category.submodule}/\${category.toolsDir}/99-dashboard/\${toolSlug}.html\`;
+    } else if (toolSlug.startsWith('ecommerce-')) {
+      return \`/open-source/\${category.submodule}/\${category.toolsDir}/100-ecommerce/\${toolSlug}.html\`;
+    } else if (toolSlug.startsWith('blog-')) {
+      return \`/open-source/\${category.submodule}/\${category.toolsDir}/101-blog/\${toolSlug}.html\`;
+    } else if (toolSlug.startsWith('community-')) {
+      return \`/open-source/\${category.submodule}/\${category.toolsDir}/102-community/\${toolSlug}.html\`;
     }
   }
 
