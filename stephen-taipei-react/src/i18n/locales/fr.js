@@ -55,7 +55,7 @@ export default {
           "Direction de l'architecture Nx Monorepo, intégration de plusieurs projets avec partage de modules, plus de 100 thèmes pilotés par API avec changement dynamique de mise en page.",
           "Mise à niveau vers Angular 19, adoption complète de Signal/Computed/Effect, réduction de la dépendance RxJS avec optimisation OnPush.",
           "Modularisation de la logique complexe en composants partagés, réduction du code de 1000 lignes à moins de 200.",
-          "Gestion directe de 2-4 ingénieurs frontend, coordination indirecte de 6 membres du support, sessions régulières de partage technique.",
+          "Gestion directe de 2-4 ingénieurs frontend, coordination indirecte de plusieurs membres du support, sessions régulières de partage technique.",
         ],
       },
       {
@@ -256,6 +256,23 @@ export default {
     github: "GitHub",
     viewAllTools: "Parcourir tous les outils",
     tools: "outils",
+  },
+
+  // Awesome APP 100 Section
+  awesomeApp100: {
+    title: 'Awesome APP 100',
+    subtitle: '100 Applications Natives Premium',
+    badge: 'Nouvelle Plateforme de Stephen',
+    heading: 'Applications Natives Premium Sélectionnées',
+    description: 'Une collection de 100 applications natives premium sélectionnées pour les plateformes iOS et Android. Chaque application a été soigneusement choisie pour sa qualité, ses performances et son expérience utilisateur.',
+    features: [
+      { title: 'Apps Natives', desc: 'iOS & Android' },
+      { title: 'Qualité Premium', desc: 'Soigneusement Sélectionnées' },
+      { title: 'Multiplateforme', desc: 'Expérience Universelle' },
+    ],
+    cta: 'Explorer Awesome APP 100',
+    visualText: 'Apps Premium',
+    visualSubtext: 'Sélectionnées pour l\'Excellence',
   },
 
   footer: {

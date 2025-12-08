@@ -59,7 +59,7 @@ export default {
           '主導 Nx Monorepo 架構，整合多專案與模組共享，以 API 驅動完成百種以上主題、支援多版型動態切換。',
           '持續升級至 Angular 19，全面導入 Signal / Computed / Effect，減少 RxJS 依賴，搭配 OnPush 優化效能。',
           '將既有的複雜邏輯與樣式模組化為 Shared Component，使原本千行程式縮減至 200 行內。',
-          '直接管理 2-4 位前端工程師，間接協調 6 位支援人員，定期舉辦內部技術分享會。',
+          '直接管理 2-4 位前端工程師，間接協調多位支援人員，定期舉辦內部技術分享會。',
         ],
       },
       {
@@ -231,6 +231,23 @@ export default {
     github: 'GitHub',
     viewAllTools: '瀏覽所有工具',
     tools: '工具',
+  },
+
+  // Awesome APP 100 Section
+  awesomeApp100: {
+    title: 'Awesome APP 100',
+    subtitle: '100 款精選原生應用程式',
+    badge: 'Stephen 新平台',
+    heading: '精選優質原生 APP 推薦',
+    description: '精心挑選 100 款優質原生應用程式，涵蓋 iOS 與 Android 平台，專注於品質、效能與使用者體驗。每款 APP 都經過嚴格篩選，為您帶來最佳的移動應用體驗。',
+    features: [
+      { title: '原生應用', desc: 'iOS & Android' },
+      { title: '精選品質', desc: '嚴格篩選' },
+      { title: '跨平台', desc: '通用體驗' },
+    ],
+    cta: '探索 Awesome APP 100',
+    visualText: '精選應用',
+    visualSubtext: '追求卓越品質',
   },
 
   // Footer

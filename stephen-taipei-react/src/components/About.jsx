@@ -28,7 +28,7 @@ const About = () => {
                 </div> */}
               </div>
               {/* Floating badges */}
-              <div className="flex absolute -right-6 -bottom-6 gap-3 items-center p-4 bg-white rounded-xl border border-gray-100 shadow-lg">
+              <div className="flex absolute right-2 -bottom-6 sm:-right-6 gap-3 items-center p-4 bg-white rounded-xl border border-gray-100 shadow-lg">
                 <div className="p-2 bg-blue-50 rounded-lg text-primary">
                   <Award className="w-6 h-6" />
                 </div>

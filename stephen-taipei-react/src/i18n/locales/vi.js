@@ -63,7 +63,7 @@ export default {
           "Dẫn dắt kiến trúc Nx Monorepo, tích hợp nhiều dự án với chia sẻ module, 100+ chủ đề và chuyển đổi bố cục động.",
           "Nâng cấp lên Angular 19, áp dụng đầy đủ Signal/Computed/Effect, giảm phụ thuộc RxJS với tối ưu OnPush.",
           "Tách logic phức tạp thành Shared Components, rút gọn mã 1000 dòng xuống dưới 200 dòng.",
-          "Quản lý trực tiếp 2-4 kỹ sư frontend, phối hợp 6 nhân sự hỗ trợ và tổ chức chia sẻ kỹ thuật định kỳ.",
+          "Quản lý trực tiếp 2-4 kỹ sư frontend, phối hợp nhiều nhân sự hỗ trợ và tổ chức chia sẻ kỹ thuật định kỳ.",
         ],
       },
       {
@@ -271,6 +271,23 @@ export default {
     github: "GitHub",
     viewAllTools: "Xem tất cả các công cụ",
     tools: "công cụ",
+  },
+
+  // Awesome APP 100 Section
+  awesomeApp100: {
+    title: 'Awesome APP 100',
+    subtitle: '100 Ứng dụng Native Cao cấp',
+    badge: 'Nền tảng mới của Stephen',
+    heading: 'Ứng dụng Native Cao cấp được Tuyển chọn',
+    description: 'Bộ sưu tập 100 ứng dụng native cao cấp được tuyển chọn cho nền tảng iOS và Android. Mỗi ứng dụng được lựa chọn cẩn thận về chất lượng, hiệu suất và trải nghiệm người dùng.',
+    features: [
+      { title: 'Ứng dụng Native', desc: 'iOS & Android' },
+      { title: 'Chất lượng Cao cấp', desc: 'Được Tuyển chọn Cẩn thận' },
+      { title: 'Đa Nền tảng', desc: 'Trải nghiệm Đa dạng' },
+    ],
+    cta: 'Khám phá Awesome APP 100',
+    visualText: 'Ứng dụng Cao cấp',
+    visualSubtext: 'Được Chọn lọc vì Sự Xuất sắc',
   },
 
   // Footer

@@ -257,7 +257,7 @@ const categoryConfigs = {
       'puzzle': { name: 'Puzzle', nameTw: '益智' }
     },
     parseToolDir: (dirname) => {
-      // Match pattern like "game-001-tetris"
+      // Match pattern like "game-001-tetris" or "game-1000-ultimate-horror"
       const match = dirname.match(/^game-(\d+)-(.+)$/);
       if (match) {
         return {

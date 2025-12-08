@@ -14,8 +14,15 @@ const firebaseConfig = {
   measurementId: "G-QVYBP1GL7P"
 };
 
-// Initialize Firebase
-const app = initializeApp(firebaseConfig);
-const analytics = getAnalytics(app);
+// Initialize Firebase only in main window, not in iframes
+let app = null;
+let analytics = null;
+
+// Check if we're in an iframe to prevent duplicate initialization
+if (typeof window !== 'undefined' && window.self === window.top) {
+  // We're in the main window, not in an iframe
+  app = initializeApp(firebaseConfig);
+  analytics = getAnalytics(app);
+}
 
 export { app, analytics };

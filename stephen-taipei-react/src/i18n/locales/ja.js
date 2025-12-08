@@ -54,7 +54,7 @@ export default {
           "Nx Monorepoアーキテクチャをリードし、モジュール共有で複数のプロジェクトを統合、動的レイアウト切り替えでAPI駆動の100以上のテーマを実現。",
           "Angular 19にアップグレード、Signal/Computed/Effectを完全採用、OnPush最適化でRxJS依存を削減。",
           "複雑なロジックをShared Componentsにモジュール化、1000行のコードを200行以下に削減。",
-          "フロントエンドエンジニア2-4名を直接管理、サポートスタッフ6名を間接的に調整、定期的な技術共有セッションを開催。",
+          "フロントエンドエンジニア2-4名を直接管理、複数のサポートスタッフを間接的に調整、定期的な技術共有セッションを開催。",
         ],
       },
       {
@@ -255,6 +255,23 @@ export default {
     github: "GitHub",
     viewAllTools: "すべてのツールを閲覧",
     tools: "ツール",
+  },
+
+  // Awesome APP 100 Section
+  awesomeApp100: {
+    title: 'Awesome APP 100',
+    subtitle: '100 のプレミアムネイティブアプリ',
+    badge: 'Stephen の新プラットフォーム',
+    heading: '厳選されたプレミアムネイティブアプリ',
+    description: 'iOS と Android プラットフォーム向けに厳選された 100 のプレミアムネイティブアプリケーション。品質、パフォーマンス、ユーザー体験に重点を置いて慎重に選ばれた、最高のモバイルアプリをお届けします。',
+    features: [
+      { title: 'ネイティブアプリ', desc: 'iOS & Android' },
+      { title: 'プレミアム品質', desc: '厳選されたアプリ' },
+      { title: 'クロスプラットフォーム', desc: 'ユニバーサル体験' },
+    ],
+    cta: 'Awesome APP 100 を探索',
+    visualText: 'プレミアムアプリ',
+    visualSubtext: '卓越した品質を追求',
   },
 
   footer: {

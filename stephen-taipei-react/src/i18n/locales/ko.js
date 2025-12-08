@@ -63,7 +63,7 @@ export default {
           "Nx Monorepo 아키텍처를 주도해 여러 프로젝트를 모듈 공유로 통합하고, API 기반 100+ 테마와 동적 레이아웃 전환을 구현.",
           "Angular 19로 업그레이드하고 Signal/Computed/Effect를 전면 도입, RxJS 의존도를 줄이고 OnPush 최적화 적용.",
           "복잡한 로직을 공유 컴포넌트로 모듈화하여 1000라인 코드를 200라인 이하로 단축.",
-          "프런트엔드 엔지니어 2-4명 직접 관리, 6명의 지원 인력을 간접 조율하며 정기 기술 세션 운영.",
+          "프런트엔드 엔지니어 2-4명 직접 관리, 다수의 지원 인력을 간접 조율하며 정기 기술 세션 운영.",
         ],
       },
       {
@@ -270,6 +270,23 @@ export default {
     github: "GitHub",
     viewAllTools: "모든 도구 보기",
     tools: "도구",
+  },
+
+  // Awesome APP 100 Section
+  awesomeApp100: {
+    title: 'Awesome APP 100',
+    subtitle: '100개의 프리미엄 네이티브 앱',
+    badge: 'Stephen의 새 플랫폼',
+    heading: '엄선된 프리미엄 네이티브 앱',
+    description: 'iOS와 Android 플랫폼을 위해 엄선된 100개의 프리미엄 네이티브 애플리케이션. 품질, 성능, 사용자 경험에 중점을 두고 신중하게 선택된 최고의 모바일 앱을 제공합니다.',
+    features: [
+      { title: '네이티브 앱', desc: 'iOS & Android' },
+      { title: '프리미엄 품질', desc: '엄격하게 선별' },
+      { title: '크로스 플랫폼', desc: '유니버설 경험' },
+    ],
+    cta: 'Awesome APP 100 탐색',
+    visualText: '프리미엄 앱',
+    visualSubtext: '탁월함을 추구',
   },
 
   // Footer

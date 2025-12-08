@@ -55,7 +55,7 @@ export default {
           "Pinamunuan ang Nx Monorepo architecture, pag-integrate ng maraming proyekto na may module sharing, API-driven 100+ themes na may dynamic layout switching.",
           "Nag-upgrade sa Angular 19, ganap na pinagtibay ang Signal/Computed/Effect, binabawasan ang RxJS dependency na may OnPush optimization.",
           "Na-modularize ang complex logic sa Shared Components, binabawasan ang 1000-line code sa ilalim ng 200 linya.",
-          "Direktang pamamahala ng 2-4 frontend engineers, hindi direktang pag-coordinate ng 6 support staff, regular na technical sharing sessions.",
+          "Direktang pamamahala ng 2-4 frontend engineers, hindi direktang pag-coordinate ng maraming support staff, regular na technical sharing sessions.",
         ],
       },
       {
@@ -256,6 +256,23 @@ export default {
     github: "GitHub",
     viewAllTools: "Tingnan ang lahat ng mga tool",
     tools: "mga tool",
+  },
+
+  // Awesome APP 100 Section
+  awesomeApp100: {
+    title: 'Awesome APP 100',
+    subtitle: '100 Premium Native Apps',
+    badge: 'Bagong Platform ni Stephen',
+    heading: 'Napiling Premium Native Apps',
+    description: 'Isang koleksyon ng 100 premium native applications na napili para sa iOS at Android platforms. Bawat app ay maingat na napili para sa kalidad, performance, at user experience.',
+    features: [
+      { title: 'Native Apps', desc: 'iOS & Android' },
+      { title: 'Premium Quality', desc: 'Maingat na Napili' },
+      { title: 'Cross Platform', desc: 'Universal na Karanasan' },
+    ],
+    cta: 'Tuklasin ang Awesome APP 100',
+    visualText: 'Premium Apps',
+    visualSubtext: 'Napili para sa Kahusayan',
   },
 
   footer: {

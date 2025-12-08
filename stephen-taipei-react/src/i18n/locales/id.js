@@ -54,7 +54,7 @@ export default {
           "Memimpin arsitektur Nx Monorepo, mengintegrasikan beberapa proyek dengan berbagi modul, 100+ tema berbasis API dengan pergantian tata letak dinamis.",
           "Upgrade ke Angular 19, sepenuhnya mengadopsi Signal/Computed/Effect, mengurangi ketergantungan RxJS dengan optimasi OnPush.",
           "Memodularisasi logika kompleks menjadi Shared Components, mengurangi kode 1000 baris menjadi di bawah 200 baris.",
-          "Manajemen langsung 2-4 engineer frontend, koordinasi tidak langsung 6 staf pendukung, sesi berbagi teknis reguler.",
+          "Manajemen langsung 2-4 engineer frontend, koordinasi tidak langsung beberapa staf pendukung, sesi berbagi teknis reguler.",
         ],
       },
       {
@@ -258,5 +258,22 @@ export default {
   },
   footer: {
     copyright: "Hak cipta dilindungi",
+  },
+
+  // Awesome APP 100 Section
+  awesomeApp100: {
+    title: 'Awesome APP 100',
+    subtitle: '100 Aplikasi Native Premium',
+    badge: 'Platform Baru Stephen',
+    heading: 'Aplikasi Native Premium Pilihan',
+    description: 'Koleksi 100 aplikasi native premium pilihan untuk platform iOS dan Android. Setiap aplikasi dipilih dengan cermat berdasarkan kualitas, performa, dan pengalaman pengguna.',
+    features: [
+      { title: 'Aplikasi Native', desc: 'iOS & Android' },
+      { title: 'Kualitas Premium', desc: 'Dipilih dengan Cermat' },
+      { title: 'Lintas Platform', desc: 'Pengalaman Universal' },
+    ],
+    cta: 'Jelajahi Awesome APP 100',
+    visualText: 'Aplikasi Premium',
+    visualSubtext: 'Dipilih untuk Keunggulan',
   },
 };

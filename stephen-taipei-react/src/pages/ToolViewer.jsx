@@ -140,14 +140,13 @@ const ToolViewer = () => {
           className="w-full h-full pt-12"
           onLoad={handleIframeLoad}
           title={language === 'zh-TW' || language === 'zh-HK' ? tool.nameTw : language === 'zh-CN' ? tool.nameZh : tool.name}
-          sandbox="allow-scripts allow-same-origin allow-popups allow-forms allow-modals"
         />
       </div>
     );
   }
 
   return (
-    <div className="min-h-screen bg-gray-100">
+    <div className="min-h-screen bg-gray-100 overflow-x-hidden">
       {/* Header */}
       <header className="sticky top-0 z-50 bg-white shadow-sm">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -255,7 +254,6 @@ const ToolViewer = () => {
               className="w-full h-full"
               onLoad={handleIframeLoad}
               title={language === 'zh-TW' || language === 'zh-HK' ? tool.nameTw : language === 'zh-CN' ? tool.nameZh : tool.name}
-              sandbox="allow-scripts allow-same-origin allow-popups allow-forms allow-modals"
             />
           </div>
         </motion.div>
