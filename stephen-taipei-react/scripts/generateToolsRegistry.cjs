@@ -102,6 +102,8 @@ const categoryConfigs = {
       '10-footers': { name: 'Footers', nameTw: '頁尾' },
       '10-forms': { name: 'Forms', nameTw: '表單' },
       '11-authentication': { name: 'Authentication', nameTw: '身份驗證' },
+      '12-cards': { name: 'Cards', nameTw: '卡片' },
+      '12-lists': { name: 'Lists', nameTw: '列表' },
       '13-modals': { name: 'Modals', nameTw: '彈窗' },
       '14-notifications': { name: 'Notifications', nameTw: '通知' },
       '20-landing-pages': { name: 'Landing Pages', nameTw: '登陸頁面' },
@@ -110,6 +112,56 @@ const categoryConfigs = {
       '101-blog': { name: 'Blog', nameTw: '部落格' },
       '102-community': { name: 'Community', nameTw: '社群' }
     },
+    additionalDirs: [
+      {
+        dir: 'cards',
+        category: '12-cards',
+        parseToolDir: (dirname) => {
+          const match = dirname.match(/^card-(\d+)$/);
+          if (match) {
+            return {
+              id: match[1],
+              slug: dirname,
+              name: `Card ${match[1]}`,
+              nameTw: `卡片 ${match[1]}`
+            };
+          }
+          return null;
+        }
+      },
+      {
+        dir: 'forms',
+        category: '10-forms',
+        parseToolDir: (dirname) => {
+          const match = dirname.match(/^form-(\d+)$/);
+          if (match) {
+            return {
+              id: match[1],
+              slug: dirname,
+              name: `Form ${match[1]}`,
+              nameTw: `表單 ${match[1]}`
+            };
+          }
+          return null;
+        }
+      },
+      {
+        dir: 'lists',
+        category: '12-lists',
+        parseToolDir: (dirname) => {
+          const match = dirname.match(/^list-(\d+)$/);
+          if (match) {
+            return {
+              id: match[1],
+              slug: dirname,
+              name: `List ${match[1]}`,
+              nameTw: `列表 ${match[1]}`
+            };
+          }
+          return null;
+        }
+      }
+    ],
     parseToolFile: (filename, subCategory) => {
       // Match patterns: nav-001.html, hero-001.html, feat-001.html, content-001.html,
       // cta-001.html, price-001.html, test-001.html, team-001.html, gallery-001.html,
@@ -320,6 +372,29 @@ const categoryConfigs = {
 
 function scanTools(submoduleName, config) {
   const tools = [];
+
+  // Scan additional root directories if specified (e.g., cards, forms, lists)
+  if (config.additionalDirs) {
+    for (const additionalDir of config.additionalDirs) {
+      const additionalPath = path.join(TOOLS_DIR, submoduleName, additionalDir.dir);
+
+      if (fs.existsSync(additionalPath)) {
+        const items = fs.readdirSync(additionalPath).filter(f => {
+          const fullPath = path.join(additionalPath, f);
+          return fs.statSync(fullPath).isDirectory();
+        });
+
+        for (const item of items) {
+          const toolInfo = additionalDir.parseToolDir(item);
+          if (toolInfo) {
+            toolInfo.category = additionalDir.category;
+            tools.push(toolInfo);
+          }
+        }
+      }
+    }
+  }
+
   const submodulePath = path.join(TOOLS_DIR, submoduleName, config.toolsDir);
 
   if (!fs.existsSync(submodulePath)) {
@@ -440,7 +515,20 @@ export function getToolUrl(categoryId, toolSlug) {
   // Special handling for different category types
   if (categoryId === 'tailwind-templates') {
     // Determine subcategory from slug
-    if (toolSlug.startsWith('nav-')) {
+    // Cards, Forms, Lists are in root directories
+    if (toolSlug.startsWith('card-')) {
+      return \`/open-source/\${category.submodule}/cards/\${toolSlug}/\${toolSlug}.html\`;
+    } else if (toolSlug.startsWith('list-')) {
+      return \`/open-source/\${category.submodule}/lists/\${toolSlug}/\${toolSlug}.html\`;
+    } else if (toolSlug.startsWith('form-')) {
+      // Check if it's from root forms directory (form-031 onwards) or templates/10-forms
+      const formNum = parseInt(toolSlug.match(/form-(\d+)/)?.[1] || '0');
+      if (formNum >= 31) {
+        return \`/open-source/\${category.submodule}/forms/\${toolSlug}/\${toolSlug}.html\`;
+      } else {
+        return \`/open-source/\${category.submodule}/\${category.toolsDir}/10-forms/\${toolSlug}.html\`;
+      }
+    } else if (toolSlug.startsWith('nav-')) {
       return \`/open-source/\${category.submodule}/\${category.toolsDir}/01-navigation/\${toolSlug}.html\`;
     } else if (toolSlug.startsWith('hero-')) {
       return \`/open-source/\${category.submodule}/\${category.toolsDir}/02-hero-sections/\${toolSlug}.html\`;
@@ -460,8 +548,6 @@ export function getToolUrl(categoryId, toolSlug) {
       return \`/open-source/\${category.submodule}/\${category.toolsDir}/09-gallery/\${toolSlug}.html\`;
     } else if (toolSlug.startsWith('footer-')) {
       return \`/open-source/\${category.submodule}/\${category.toolsDir}/10-footers/\${toolSlug}.html\`;
-    } else if (toolSlug.startsWith('form-')) {
-      return \`/open-source/\${category.submodule}/\${category.toolsDir}/10-forms/\${toolSlug}.html\`;
     } else if (toolSlug.startsWith('auth-')) {
       return \`/open-source/\${category.submodule}/\${category.toolsDir}/11-authentication/\${toolSlug}.html\`;
     } else if (toolSlug.startsWith('modal-')) {
